@@ -1,5 +1,12 @@
+#include <LiquidMenu.h>
+#include <LiquidCrystal.h>
+#include <AsyncTaskLib.h>
+#include <DHTStable.h>
+#include <Config.h>
+#include <EasyBuzzer.h>
+#include <EEPROM.h>
 #include <StateMachineLib.h>
-#include "Constantes.h"
+#include "Configuracion.h"
 enum Estado {
   Inicio,
   Configuracion,
@@ -81,7 +88,7 @@ void setup() {
 
   Serial.println("Starting State Machine...");
   configurarMaquinaEstado();
-    Serial.println("Start Machine Started");
+  Serial.println("Start Machine Started");
 
   maquinaEstados.SetState(Inicio, false, true);
 }
