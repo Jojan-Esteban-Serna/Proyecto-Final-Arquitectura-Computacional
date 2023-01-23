@@ -25,4 +25,5 @@
 #define PIN_DHT11 22
 #define PIN_PHOTOCELL 11
 #define PIN_BOTON 12
+
 #endif
