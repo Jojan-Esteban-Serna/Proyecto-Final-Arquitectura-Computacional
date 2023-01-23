@@ -18,8 +18,8 @@ char keys[ROWS][COLS] = {
   { '7', '8', '9', 'C' },
   { '*', '0', '#', 'D' }
 };
-byte rowPins[ROWS] = { 23, 25, 27, 29 };  //connect to the row pinouts of the keypad
-byte colPins[COLS] = { 31, 33, 35, 37 };  //connect to the column pinouts of the keypad
+byte rowPins[ROWS] = { 53, 51, 49, 47 };  //connect to the row pinouts of the keypad
+byte colPins[COLS] = { 45, 43, 41, 39 };  //connect to the column pinouts of the keypad
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 #pragma endregion
 
@@ -27,8 +27,7 @@ Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 #if defined(LiquidCrystal_I2C_h)
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 #elif defined(LiquidCrystal_h)
-const int rs = 7, en = 8, d4 = 22, d5 = 24, d6 = 26, d7 = 28;
-LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+LiquidCrystal lcd(PIN_RS, PIN_EN, PIN_D4, PIN_D5, PIN_D6, PIN_D7);
 #endif
 #pragma endregion
 
@@ -115,6 +114,7 @@ void configurarMaquinaEstado() {
   });
 }
 void setup() {
+
 #if defined(LiquidCrystal_I2C_h)
   lcd.init();
   lcd.backlight();

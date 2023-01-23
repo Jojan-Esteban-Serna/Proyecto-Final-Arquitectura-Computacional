@@ -15,12 +15,12 @@
 #define MAX_TEMP 125
 #define MAX_LIGTH 1023
 
-#define PIN_RS 7
-#define PIN_EN 8
-#define PIN_D4 22
-#define PIN_D5 24
-#define PIN_D6 26
-#define PIN_D7 28
+#define PIN_RS 52
+#define PIN_EN 50
+#define PIN_D4 48
+#define PIN_D5 46
+#define PIN_D6 44
+#define PIN_D7 42
 
 #define PIN_DHT11 22
 #define PIN_PHOTOCELL 11
