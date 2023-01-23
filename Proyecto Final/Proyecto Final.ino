@@ -18,7 +18,7 @@ enum Entrada {
   Desconocida,
   Configurar,
   Monitorear,
-  TemperaturaCaliente
+  TemperaturaCaliente,
 };
 
 
@@ -30,7 +30,7 @@ public:
 
 
   MaquinaDeEstados()
-    : StateMachine(4, 5) {
+    : StateMachine(4, 6) {
   }
 
   void setEntradaActual(Entrada entrada) {
@@ -61,6 +61,10 @@ void configurarMaquinaEstado() {
 
   maquinaEstados.AddTransition(Alarma, Monitoreo, []() {
     return maquinaEstados.getEntradaActual() == Monitorear;
+  });
+
+    maquinaEstados.AddTransition(Alarma, Configuracion, []() {
+    return maquinaEstados.getEntradaActual() == Configurar;
   });
 
   //Al entrar
