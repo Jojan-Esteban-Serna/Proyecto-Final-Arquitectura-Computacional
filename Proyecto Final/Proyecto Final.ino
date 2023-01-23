@@ -7,6 +7,8 @@
 #include <EEPROM.h>
 #include <StateMachineLib.h>
 #include "Configuracion.h"
+
+
 enum Estado {
   Inicio,
   Configuracion,
