@@ -7,9 +7,9 @@
 
 #define PIN_BUZZER_PASIVO 12  // buzzer pasivo en pin 12
 
-#define PIN_LED_RED 46
-#define PIN_LED_GREEN 44
-#define PIN_LED_BLUE 45
+#define PIN_LED_RED 4
+#define PIN_LED_GREEN 5
+#define PIN_LED_BLUE 6
 
 #define TEST_TEMP 15
 #define MAX_TEMP 125
@@ -24,6 +24,6 @@
 
 #define PIN_DHT11 22
 #define PIN_PHOTOCELL 11
-#define PIN_BOTON 12
+#define PIN_BOTON 2
 
 #endif
