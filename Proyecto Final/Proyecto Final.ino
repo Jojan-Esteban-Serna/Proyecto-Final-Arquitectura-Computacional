@@ -1,6 +1,7 @@
+#include <LiquidCrystal.h>
+
 #include <LiquidMenu.h>
 #include <Keypad.h>
-#include <LiquidCrystal_I2C.h>
 #include <AsyncTaskLib.h>
 #include <DHTStable.h>
 #include <Config.h>
@@ -231,26 +232,236 @@ AsyncTask tskSeguridad(100, []() {
 
   setup();
   while (maquinaEstados.GetState() == Estado::Inicio) {
+    Serial.println("Loop Seguridad");
+
     loop();
-    Serial.println("Here");
   }
 });
 
 #pragma endregion
 
 #pragma region menu
-AsyncTask tskMenu(100, []() {
+typedef struct Umbrales {
+  int checkKey;
+  int umbrTempHigh;
+  int umbrTempLow;
+  int umbrLuzHigh;
+  int umbrLuzLow;
+} Umbrales;
+
+Umbrales umbralConfig;
+Umbrales umbralBaseConfig = Umbrales{ 192837465, DEFAULT_TEMPHIGH, DEFAULT_TEMPLOW, DEFAULT_LUZHIGH, DEFAULT_LUZLOW };
+int eepromBaseAddres = 0;
+int readNumber();
+void editar_valor(String titulo, int *varimp, bool (*isInRangeFunction)(int, int *));
+bool isInTempRange(int number, int *varimp);
+bool isInLightRange(int number, int *varimp);
+void umbTempHighFunc();
+void umbTempLowFunc();
+void umbLuzHighFunc();
+void umbLuzLowFunc();
+
+#pragma region Screens
+//char *messages[5] = { "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" };
+char messages[5][16] = { {"1.UmbTempHigh"}, {"2.UmbTempLow"}, {"3.UmbLuzHigh"}, {"4.UmbLuzLow"}, {"5.Reset"} };
+
+LiquidScreen *lastScreen = nullptr;
+
+LiquidLine screen_1_line_1(0, 0, messages[0]);
+LiquidLine screen_1_line_2(0, 1, messages[1]);
+LiquidScreen screen_1(screen_1_line_1, screen_1_line_2);
+
+LiquidLine screen_2_line_1(0, 0, messages[1]);
+LiquidLine screen_2_line_2(0, 1, messages[2]);
+LiquidScreen screen_2(screen_2_line_1, screen_2_line_2);
+
+LiquidLine screen_3_line_1(0, 0, messages[2]);
+LiquidLine screen_3_line_2(0, 1, messages[3]);
+LiquidScreen screen_3(screen_3_line_1, screen_3_line_2);
+
+LiquidLine screen_4_line_1(0, 0, messages[3]);
+LiquidLine screen_4_line_2(0, 1, messages[4]);
+LiquidScreen screen_4(screen_4_line_1, screen_4_line_2);
+
+LiquidLine screen_5_line_1(0, 0, "");
+LiquidLine screen_5_line_2(0, 1, "");
+LiquidScreen screen_5(screen_5_line_1, screen_5_line_2);
+
+LiquidMenu menu(lcd, screen_1, screen_2, screen_3, screen_4);
+
+#pragma endregion
+
+int readNumber() {
+  lcd.setCursor(0, 1);
+
+  lcd.print("                ");
+  lcd.setCursor(0, 1);
+
+  String strNumber = "";
+  char readedChar;
+  int checkPointTime = millis();
+  int elapsedTime = millis() - checkPointTime;
+  while (elapsedTime <= 5000) {
+    char key = keypad.getKey();
+    if (key) {
+      checkPointTime = millis();
+
+      if (key == '*') {
+        break;  // clear input
+      } else if (isAlpha(key)) {
+        continue;
+      } else if (isDigit(key)) {  // only act on numeric keys
+        strNumber += key;         // append new character to input string
+        lcd.print(key);
+      }
+    }
+    elapsedTime = millis() - checkPointTime;
+  }
+  if (elapsedTime >= 5000) {
+    return 19283747;
+  }
+  return strNumber.toInt();
+}
+
+bool isInTempRange(int number, int *varimp) {
+  return ((varimp == &umbralConfig.umbrTempLow && number < umbralConfig.umbrTempHigh || varimp == &umbralConfig.umbrTempHigh && number > umbralConfig.umbrTempLow) && number <= MAX_TEMP);
+}
+
+bool isInLightRange(int number, int *varimp) {
+  return ((varimp == &umbralConfig.umbrLuzLow && number < umbralConfig.umbrLuzHigh || varimp == &umbralConfig.umbrLuzHigh && number > umbralConfig.umbrLuzLow) && number <= MAX_LIGTH);
+}
+
+
+void editar_valor(String titulo, int *varimp, bool (*isInRangeFunction)(int, int *)) {
+  menu.change_screen(&screen_5);
+  lcd.setCursor(0, 0);
+  lcd.print("                ");
+  lcd.setCursor(0, 0);
+  lcd.print(titulo);
+  lcd.setCursor(0, 1);
+  lcd.print(*varimp);
+  lcd.print(" \"*\" to edit");
+  char pressedKey;
+  int checkPointTime = millis();
+  int elapsedTime = millis() - checkPointTime;
+  while ((pressedKey = keypad.getKey()) != '*' && pressedKey == NO_KEY && pressedKey != '#' && (elapsedTime = millis() - checkPointTime) <= 5000 || isAlphaNumeric(pressedKey)) {
+  }
+  if (pressedKey == '#' || elapsedTime > 5000) {
+    menu.change_screen(lastScreen);
+    return;
+  }
+  int number = readNumber();
+  if (number != 19283747 && isInRangeFunction(number, varimp)) {
+    *varimp = number;
+    EEPROM.put(eepromBaseAddres, umbralConfig);
+    menu.change_screen(lastScreen);
+    return;
+  }
+
+  lcd.setCursor(0, 1);
+  lcd.print("                ");
+  lcd.setCursor(0, 1);
+  checkPointTime = millis();
+  elapsedTime = millis() - checkPointTime;
+  lcd.print("Error press \"*\"");
+  while ((pressedKey = keypad.getKey()) != '*' && pressedKey == NO_KEY && (elapsedTime = millis() - checkPointTime) <= 5000 || pressedKey == '#' || isAlphaNumeric(pressedKey)) {
+  }
+
+  menu.change_screen(lastScreen);
+}
+void umbTempHighFunc() {
+  editar_valor("UmbTempHigh", &umbralConfig.umbrTempHigh, isInTempRange);
+};
+
+void umbTempLowFunc() {
+  editar_valor("UmbTempLow", &umbralConfig.umbrTempLow, isInTempRange);
+};
+
+void umbLuzHighFunc() {
+  editar_valor("UmbLuzHigh", &umbralConfig.umbrLuzHigh, isInLightRange);
+};
+void umbLuzLowFunc() {
+  editar_valor("UmbLuzLow", &umbralConfig.umbrLuzLow, isInLightRange);
+};
+
+
+AsyncTask tskConfiguracion(100, []() {
 
   auto setup = []() {
+    EEPROM.get(eepromBaseAddres, umbralConfig);
+    if (umbralConfig.checkKey != umbralBaseConfig.checkKey) {
+      umbralConfig = umbralBaseConfig;
+      EEPROM.put(eepromBaseAddres, umbralConfig);
+    }
+    menu.add_screen(screen_5);
+    pinMode(PIN_LED_GREEN, OUTPUT);
+    pinMode(PIN_LED_BLUE, OUTPUT);
+    pinMode(PIN_LED_RED, OUTPUT);
 
+    // screen_2_line_1.attach_function(1,)
+    screen_1_line_1.attach_function(1, umbTempHighFunc);
+    screen_1_line_2.attach_function(1, umbTempLowFunc);
+
+    screen_2_line_1.attach_function(1, umbTempLowFunc);
+    screen_2_line_2.attach_function(1, umbLuzHighFunc);
+
+    screen_3_line_1.attach_function(1, umbLuzHighFunc);
+    screen_3_line_2.attach_function(1, umbLuzLowFunc);
+
+    screen_4_line_1.attach_function(1, umbLuzLowFunc);
+    screen_4_line_2.attach_function(1, []() {
+      menu.change_screen(&screen_5);
+
+      lcd.setCursor(0, 0);
+      lcd.print("                ");
+
+      lcd.setCursor(0, 0);
+      lcd.print("\"*\" to confirm ");
+      lcd.setCursor(0, 1);
+      lcd.print("\"#\" to cancel  ");
+      char pressedKey;
+      int checkPointTime = millis();
+      int elapsedTime = millis() - checkPointTime;
+      while ((pressedKey = keypad.getKey()) != '*' && pressedKey == NO_KEY && pressedKey != '#' && (elapsedTime = millis() - checkPointTime) <= 5000 || isAlphaNumeric(pressedKey)) {
+      }
+      if (pressedKey == '#' || elapsedTime > 5000) {
+        menu.change_screen(lastScreen);
+        return;
+      }
+      umbralConfig.umbrTempHigh = DEFAULT_TEMPHIGH;
+      umbralConfig.umbrTempLow = DEFAULT_TEMPLOW;
+      menu.change_screen(lastScreen);
+    });
+    menu.update();
   };
 
   auto loop = []() {
+    char key = keypad.getKey();
+    if (key == 'A') {
 
+      if (menu.get_currentScreen() != &screen_1) {
+
+        menu.previous_screen();
+      }
+    } else if (key == 'D') {
+
+      if (menu.get_currentScreen() != &screen_4) {
+        menu.next_screen();
+      }
+    } else if (key == '#') {
+      menu.switch_focus();
+    } else if (key == '*') {
+      lastScreen = menu.get_currentScreen();
+      menu.call_function(1);
+      // lcd.print(readNumber());
+    }
   };
 
   setup();
-  loop();
+  while (maquinaEstados.GetState() == Estado::Configuracion) {
+    loop();
+
+  }
 });
 
 #pragma endregion
@@ -308,18 +519,20 @@ void configurarMaquinaEstado() {
     tskSeguridad.Start();
   });
   maquinaEstados.SetOnEntering(Configuracion, []() {
-        Serial.println("Entrando a config");
-
+    Serial.println("Entrando a config");
+    tskConfiguracion.Start();
   });
   maquinaEstados.SetOnEntering(Monitoreo, []() {});
   maquinaEstados.SetOnEntering(Alarma, []() {});
 
   //Al Salir
   maquinaEstados.SetOnLeaving(Inicio, []() {
-    Serial.println("Leaving A");
+    tskSeguridad.Stop();
+    Serial.println("La contraseña fue correcta");
   });
   maquinaEstados.SetOnLeaving(Configuracion, []() {
-    Serial.println("Leaving A");
+    tskConfiguracion.Start();
+    Serial.println("Saliendo de la configuracion");
   });
   maquinaEstados.SetOnLeaving(Monitoreo, []() {
     Serial.println("Leaving A");
@@ -360,5 +573,6 @@ void setup() {
 void loop() {
   maquinaEstados.Update();
   tskSeguridad.Update();
+  tskConfiguracion.Update();
 
 }
