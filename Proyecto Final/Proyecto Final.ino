@@ -24,7 +24,7 @@
 #include <EasyBuzzer.h>
 #include <EEPROM.h>
 #include "Configuracion.h"
-#define WOKWI true
+#define WOKWI false
 #if WOKWI
 #include "StateMachineLib.h"
 #else
@@ -143,23 +143,23 @@ enum Entrada {
  * Contiene métodos públicos para establecer y obtener la entrada actual, y un constructor para inicializar la máquina de estados.
  */
 class MaquinaDeEstados : public StateMachine {
-  private:
-    Entrada entradaActual;
-  public:
+private:
+  Entrada entradaActual;
+public:
 
 
-    MaquinaDeEstados()
-      : StateMachine(4, 6) {
-    }
+  MaquinaDeEstados()
+    : StateMachine(4, 6) {
+  }
 
-    void setEntradaActual(Entrada entrada) {
-      entradaActual = entrada;
-      Update();
-    }
+  void setEntradaActual(Entrada entrada) {
+    entradaActual = entrada;
+    Update();
+  }
 
-    Entrada getEntradaActual() {
-      return entradaActual;
-    }
+  Entrada getEntradaActual() {
+    return entradaActual;
+  }
 };
 /**
  * @var maquinaEstados
@@ -262,20 +262,20 @@ AsyncTask tskLeerPassword(100, true, []() {
   if (flgPuedeLeer && flgQuedanIntentos) {
     char key = keypad.getKey();
 
-    if (key == '*'  || conteoCaracteres == 8) {
+    if (key == '*' || conteoCaracteres == 8) {
       verificarContrasenia();
       tskAwaitTenSeconds.Stop();
       flgFirstCharacter = true;
       flgPasswordIngresado = true;
     }
 
-    if (key  != '*' && key != NO_KEY) {
+    if (key != '*' && key != NO_KEY) {
       if (flgFirstCharacter) {
         tskAwaitTenSeconds.Start();
         flgFirstCharacter = false;
       }
       tskAwaitTenSeconds.Reset();
-      contrasenia_leida += key ;
+      contrasenia_leida += key;
       conteoCaracteres++;
       Serial.print("Contraseña leida: ");
       Serial.println(contrasenia_leida);
@@ -319,7 +319,7 @@ AsyncTask tskDecisionPassword(200, true, []() {
 AsyncTask tskSeguridad(100, []() {
   Serial.println("Entre hasta aqui");
   auto setup = []() {
-    pinMode(PIN_BUZZER_PASIVO, OUTPUT);   // pin 8 como salida
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);  // pin 8 como salida
     Serial.begin(9600);
     pinMode(PIN_LED_GREEN, OUTPUT);
     pinMode(PIN_LED_BLUE, OUTPUT);
@@ -372,7 +372,7 @@ void umbLuzLowFunc();
 
 #pragma region Screens
 #if WOKWI
-char messages[5][16] = { {"1.UmbTempHigh"}, {"2.UmbTempLow"}, {"3.UmbLuzHigh"}, {"4.UmbLuzLow"}, {"5.Reset"} };
+char messages[5][16] = { { "1.UmbTempHigh" }, { "2.UmbTempLow" }, { "3.UmbLuzHigh" }, { "4.UmbLuzLow" }, { "5.Reset" } };
 #else
 char *messages[5] = { "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" };
 #endif
@@ -497,7 +497,6 @@ void umbLuzLowFunc() {
 
 
 AsyncTask tskConfiguracion(100, []() {
-
   auto setup = []() {
     EEPROM.get(eepromBaseAddres, umbralConfig);
     if (umbralConfig.checkKey != umbralBaseConfig.checkKey) {
@@ -571,16 +570,13 @@ AsyncTask tskConfiguracion(100, []() {
   setup();
   while (maquinaEstados.GetState() == Estado::Configuracion) {
     loop();
-
   }
 });
 
 #pragma endregion
 #pragma region monitoreo
-void verificarErrores(int chk)
-{
-  switch (chk)
-  {
+void verificarErrores(int chk) {
+  switch (chk) {
     case DHTLIB_OK:
       Serial.print("OK,\t");
       break;
@@ -596,8 +592,7 @@ void verificarErrores(int chk)
   }
 }
 float humedadLeida, temperaturaLeida;
-AsyncTask tskLeerTemperatura(2000, true, []()
-{
+AsyncTask tskLeerTemperatura(2000, true, []() {
 #if WOKWI
   int chk = DHT.read22(PIN_DHT);
 #else
@@ -609,12 +604,11 @@ AsyncTask tskLeerTemperatura(2000, true, []()
   Serial.println(temperaturaLeida);
 });
 
-AsyncTask tskLeerHumedad(1000, true, []()
-{
+AsyncTask tskLeerHumedad(1000, true, []() {
 #if WOKWI
   int chk = DHT.read22(PIN_DHT);
 #else
-  int chk = DHT.read11(PIN_DHT);
+    int chk = DHT.read11(PIN_DHT);
 #endif
   verificarErrores(chk);
   humedadLeida = DHT.getHumidity();
@@ -622,8 +616,7 @@ AsyncTask tskLeerHumedad(1000, true, []()
   Serial.println(humedadLeida);
 });
 
-AsyncTask tskActualizarDisplay(4000, true, []()
-{
+AsyncTask tskActualizarDisplay(4000, true, []() {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Humedad: ");
@@ -634,7 +627,7 @@ AsyncTask tskActualizarDisplay(4000, true, []()
 });
 AsyncTask tskMonitoreo(100, []() {
   auto setup = []() {
-    pinMode(PIN_BUZZER_PASIVO, OUTPUT);   // pin 51 como salida
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);  // pin 51 como salida
     pinMode(PIN_LED_GREEN, OUTPUT);
     pinMode(PIN_LED_BLUE, OUTPUT);
     pinMode(PIN_LED_RED, OUTPUT);
@@ -648,18 +641,13 @@ AsyncTask tskMonitoreo(100, []() {
     tskLeerHumedad.Update();
     tskActualizarDisplay.Update();
 
-    if (temperaturaLeida > umbralConfig.umbrTempHigh)
-    {
+    if (temperaturaLeida > umbralConfig.umbrTempHigh) {
       color(255, 0, 0);
       temperaturaLeida = 0;
       maquinaEstados.setEntradaActual(Entrada::TemperaturaCaliente);
-    }
-    else if (temperaturaLeida < umbralConfig.umbrTempLow)
-    {
+    } else if (temperaturaLeida < umbralConfig.umbrTempLow) {
       color(0, 0, 255);
-    }
-    else if (temperaturaLeida > umbralConfig.umbrTempLow && temperaturaLeida < umbralConfig.umbrTempHigh)
-    {
+    } else if (temperaturaLeida > umbralConfig.umbrTempLow && temperaturaLeida < umbralConfig.umbrTempHigh) {
       color(0, 255, 0);
     }
   };
@@ -678,7 +666,7 @@ AsyncTask tskAlarma(100, []() {
     EasyBuzzer.setPin(PIN_BUZZER_PASIVO);
     EasyBuzzer.singleBeep(
       300,  // Frequency in hertz(HZ).
-      2000   // Duration of the beep in milliseconds(ms).
+      2000  // Duration of the beep in milliseconds(ms).
     );
   };
 
@@ -754,6 +742,10 @@ void configurarMaquinaEstado() {
 
   //Al Salir
   maquinaEstados.SetOnLeaving(Inicio, []() {
+    tskLeerPassword.Stop();
+    tskAwaitTenSeconds.Stop();
+    tskDecisionPassword.Stop();
+    tskAwaitFiveSeconds.Stop();
     tskSeguridad.Stop();
     Serial.println("La contraseña fue correcta");
   });
@@ -762,6 +754,9 @@ void configurarMaquinaEstado() {
     Serial.println("Saliendo de la configuracion");
   });
   maquinaEstados.SetOnLeaving(Monitoreo, []() {
+    tskLeerTemperatura.Stop();
+    tskLeerHumedad.Stop();
+    tskActualizarDisplay.Stop();
     tskMonitoreo.Stop();
     Serial.println("Saliendo del monitoreo");
   });
@@ -779,13 +774,11 @@ void botonPresionado() {
   if (maquinaEstados.GetState() == Estado::Monitoreo) {
     Serial.println("Pasando a configuracion");
     maquinaEstados.setEntradaActual(Entrada::Configurar);
-  }
-  else if (maquinaEstados.GetState() == Estado::Configuracion) {
+  } else if (maquinaEstados.GetState() == Estado::Configuracion) {
     Serial.println("Pasando a monitorear");
     lcd.clear();
     maquinaEstados.setEntradaActual(Entrada::Monitorear);
-  }
-  else if (maquinaEstados.GetState() == Estado::Alarma) {
+  } else if (maquinaEstados.GetState() == Estado::Alarma) {
     Serial.println("Pasando a configuracion desde alarma");
     maquinaEstados.setEntradaActual(Entrada::Configurar);
   }
@@ -793,7 +786,9 @@ void botonPresionado() {
 
 void setup() {
   pinMode(PIN_BOTON, INPUT_PULLUP);
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);
 
+  digitalWrite(PIN_BUZZER_PASIVO,LOW);
   attachInterrupt(digitalPinToInterrupt(PIN_BOTON), botonPresionado, RISING);
 
 #if defined(LiquidCrystal_I2C_h)
@@ -810,7 +805,6 @@ void setup() {
   Serial.println("Start Machine Started");
 
   maquinaEstados.SetState(Inicio, false, true);
-
 }
 
 void loop() {
@@ -819,5 +813,4 @@ void loop() {
   tskConfiguracion.Update();
   tskMonitoreo.Update();
   tskAlarma.Update();
-
 }
