@@ -1,3 +1,20 @@
+/**
+ * @mainpage Proyecto Final Arquitectura Computacional
+ *
+ * @author Jojan Esteban Serna Serna
+ * @author Santiago Agredo Vallejo
+ * @date 26 de Enero de 2023
+ *
+ * @section descripcion Descripción
+ * Este proyecto está diseñado para utilizar sensores para monitorear la temperatura y utilizar máquinas de Mealy y tareas asíncronas para realizar funciones de seguridad, configuración y monitoreo en un sistema basado en Arduino.
+ *
+ * @section objetivos Objetivos
+ * - Utilizar sensores para monitorear la temperatura
+ * - Implementar máquinas de Mealy para controlar el flujo de datos
+ * - Implementar tareas asíncronas para manejar tareas de seguridad, configuración y monitoreo en paralelo
+ * - Crear una interfaz fácil de usar para configurar y monitorear el sistema
+ */
+
 #include <LiquidCrystal.h>
 #include <LiquidMenu.h>
 #include <Keypad.h>
@@ -13,14 +30,32 @@
 #else
 #include <StateMachineLib.h>
 #endif
-#pragma region declaracion_funciones
-void leerContrasenia();
-#pragma endregion
 
 
+/**
+ * @defgroup sensor_temperatura Sensor de Temperatura
+ * @brief Sección de código encargada de la inicialización y uso del sensor de temperatura DHT mediante la librería DHTStable.
+ * 
+ * La sección de código marcada con el pragma "region sensor_temperatura" contiene el código relacionado con el sensor de temperatura utilizado en el proyecto. En este caso, se está utilizando la librería DHTStable para interactuar con el sensor DHT.
+ * La variable DHT se utiliza para crear un objeto de la clase DHTStable, el cual se utiliza para recoger y procesar los datos del sensor.
+ * La sección termina con el pragma "endregion" indicando el final de esta sección de código.
+ *
+ * 
+ */
 #pragma region sensor_temperatura
 DHTStable DHT;
 #pragma endregion
+/**
+ * @defgroup configuracion_teclado Configuración del Teclado
+ * @brief Sección de código encargada de configurar y utilizar un teclado matricial de 4x4 conectado mediante pines de entrada y salida.
+ * 
+ * En esta sección se definen las constantes ROWS y COLS, que indican el número de filas y columnas del teclado. También se declara una matriz "keys" que contiene los caracteres asociados a cada tecla del teclado.
+ * Se declaran dos arreglos "rowPins" y "colPins" que contienen los pines de entrada y salida respectivamente, conectados al teclado.
+ * Se crea un objeto "keypad" de la clase "Keypad" utilizando la función "makeKeymap" para asociar la matriz "keys" con los pines de entrada y salida.
+ * La sección termina con el pragma "endregion" indicando el final de esta sección de código.
+ *
+ * 
+ */
 #pragma region configuracion_teclado
 const byte ROWS = 4;
 const byte COLS = 4;
@@ -34,7 +69,17 @@ byte rowPins[ROWS] = { 39, 41, 43, 45 };  //connect to the row pinouts of the ke
 byte colPins[COLS] = { 47, 49, 51, 53 };  //connect to the column pinouts of the keypad
 Keypad keypad = Keypad(makeKeymap(keys), rowPins, colPins, ROWS, COLS);
 #pragma endregion
-
+/**
+ * @defgroup configuracion_lcd Configuración del LCD
+ * @brief Sección de código encargada de configurar y utilizar una pantalla LCD conectada mediante I2C o pines de entrada y salida.
+ * 
+ * En esta sección se utilizan las directivas de preprocesador "#if defined" y "#elif defined" para determinar si se está utilizando la librería "LiquidCrystal_I2C" o "LiquidCrystal" para interactuar con el LCD.
+ * En caso de utilizar la librería "LiquidCrystal_I2C", se crea un objeto "lcd" de la clase "LiquidCrystal_I2C" con una dirección I2C específica y un tamaño de 16 columnas y 2 filas.
+ * En caso de utilizar la librería "LiquidCrystal", se crea un objeto "lcd" de la clase "LiquidCrystal" utilizando pines específicos para las entradas RS, EN, D4, D5, D6 y D7.
+ * La sección termina con el pragma "endregion" indicando el final de esta sección de código.
+ *
+ * 
+ */
 #pragma region configuracion_lcd
 #if defined(LiquidCrystal_I2C_h)
 LiquidCrystal_I2C lcd(0x27, 16, 2);
@@ -43,16 +88,42 @@ LiquidCrystal lcd(PIN_RS, PIN_EN, PIN_D4, PIN_D5, PIN_D6, PIN_D7);
 #endif
 #pragma endregion
 
-
+/**
+ * @defgroup configuracion_maquina_estados_y_tareas Configuración de la Máquina de Estados y las Tareas Asíncronas
+ * @brief Sección de código encargada de configurar y utilizar una máquina de estados y tareas asíncronas para controlar el comportamiento del sistema.
+ * 
+ * En esta sección se configura y se utiliza una máquina de estados y tareas asíncronas para controlar el comportamiento del sistema.
+ * La sección termina con el pragma "endregion" indicando el final de esta sección de código.
+ *
+ * 
+ */
 #pragma region configuracion_maquina_estados_y_tareas
-
+/**
+ * @struct Estado
+ * @brief Enumeración para los estados en los que se puede encontrar el sistema
+ *
+ * Esta enumeración representa los diferentes estados en los que se puede encontrar el sistema.
+ * - Inicio: Estado inicial del sistema, en el que se realizan las configuraciones necesarias antes de comenzar a funcionar y se solicita la contraseña
+ * - Configuracion: Estado en el que se permite al usuario configurar las opciones del sistema.
+ * - Monitoreo: Estado en el que el sistema se encarga de monitorear continuamente los sensores.
+ * - Alarma: Estado en el que se activa la alarma debido a una condición determinada.
+ */
 enum Estado {
   Inicio,
   Configuracion,
   Monitoreo,
   Alarma
 };
-
+/**
+ * @struct Entrada
+ * @brief Enumeración para las entradas a la máquina de estados
+ *
+ * Esta enumeración representa las diferentes entradas a la máquina de estados.
+ * - Desconocida: Entrada no reconocida.
+ * - Configurar: Entrada para cambiar al estado de configuración.
+ * - Monitorear: Entrada para cambiar al estado de monitoreo.
+ * - TemperaturaCaliente: Entrada que indica que la temperatura ha superado el límite establecido.
+ */
 enum Entrada {
   Desconocida,
   Configurar,
@@ -61,7 +132,16 @@ enum Entrada {
 };
 
 
-
+/**
+ * @class MaquinaDeEstados
+ * @brief Clase que implementa una máquina de estados para controlar el funcionamiento del sistema
+ *
+ * Esta clase hereda de la clase StateMachine y se utiliza para controlar el funcionamiento del sistema a través de una máquina de estados.
+ * 
+ * La clase tiene un atributo privado de tipo Entrada que representa la entrada actual a la máquina de estados.
+ * 
+ * Contiene métodos públicos para establecer y obtener la entrada actual, y un constructor para inicializar la máquina de estados.
+ */
 class MaquinaDeEstados : public StateMachine {
   private:
     Entrada entradaActual;
@@ -81,9 +161,28 @@ class MaquinaDeEstados : public StateMachine {
       return entradaActual;
     }
 };
+/**
+ * @var maquinaEstados
+ * @brief Objeto de la clase MaquinaDeEstados
+ *
+ * Este objeto se utiliza para controlar el funcionamiento del sistema a través de la máquina de estados.
+ */
 MaquinaDeEstados maquinaEstados;
-
+/**
+ * @defgroup tareas Tareas
+ * @brief Sección del código donde se encuentran las tareas asíncronas del sistema
+ *
+ * En esta sección del código se encuentran las funciones y variables relacionadas con las tareas asíncronas del sistema, 
+ * tales como la lectura de sensores, actualización de pantallas y manejo de alarmas.
+ */
 #pragma region tareas
+/**
+ * @defgroup seguridad Seguridad
+ * @brief Sección del código donde se encuentran las funciones de seguridad
+ *
+ * En esta sección del código se encuentran las funciones y variables relacionadas con la seguridad del sistema, 
+ * tales como el manejo de contraseñas y la autenticación del usuario
+ */
 #pragma region seguridad
 bool flgEsperar = false;
 bool flgQuedanIntentos = true;
@@ -96,7 +195,12 @@ signed char conteoCaracteres = 0;
 String contrasenia = "12345";
 signed char intentos = 0;
 long elapsedtime = 0;
-
+/**
+* @brief Genera un color a partir de los valores RGB dados.
+* @param red Valor para el color rojo (0-255)
+* @param green Valor para el color verde (0-255)
+* @param blue Valor para el color azul (0-255)
+*/
 void color(unsigned char red, unsigned char green, unsigned char blue)  // the color generating function
 {
 
