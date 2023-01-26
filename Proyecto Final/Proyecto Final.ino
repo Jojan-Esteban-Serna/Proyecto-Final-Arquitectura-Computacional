@@ -1,5 +1,4 @@
 #include <LiquidCrystal.h>
-
 #include <LiquidMenu.h>
 #include <Keypad.h>
 #include <AsyncTaskLib.h>
@@ -7,8 +6,12 @@
 #include <Config.h>
 #include <EasyBuzzer.h>
 #include <EEPROM.h>
-#include "StateMachineLib.h"
 #include "Configuracion.h"
+#if WOKWI
+#include "StateMachineLib.h"
+#else
+#include <StateMachineLib.h>
+#endif
 #pragma region declaracion_funciones
 void leerContrasenia();
 #pragma endregion
@@ -465,30 +468,132 @@ AsyncTask tskConfiguracion(100, []() {
 });
 
 #pragma endregion
+#pragma region monitoreo
+void verificarErrores(int chk)
+{
+  switch (chk)
+  {
+    case DHTLIB_OK:
+      Serial.print("OK,\t");
+      break;
+    case DHTLIB_ERROR_CHECKSUM:
+      Serial.print("Checksum error,\t");
+      break;
+    case DHTLIB_ERROR_TIMEOUT:
+      Serial.print("Time out error,\t");
+      break;
+    default:
+      Serial.print("Unknown error,\t");
+      break;
+  }
+}
+float humedadLeida, temperaturaLeida;
+AsyncTask tskLeerTemperatura(2000, true, []()
+{
+#if WOKWI
+  int chk = DHT.read22(PIN_DHT);
+#else
+  int chk = DHT.read11(PIN_DHT);
+#endif
+  verificarErrores(chk);
+  temperaturaLeida = DHT.getTemperature();
+  Serial.print("Temp: ");
+  Serial.println(temperaturaLeida);
+});
+
+AsyncTask tskLeerHumedad(1000, true, []()
+{
+#if WOKWI
+  int chk = DHT.read22(PIN_DHT);
+#else
+  int chk = DHT.read11(PIN_DHT);
+#endif
+  verificarErrores(chk);
+  humedadLeida = DHT.getHumidity();
+  Serial.print("Humd: ");
+  Serial.println(humedadLeida);
+});
+
+AsyncTask tskActualizarDisplay(4000, true, []()
+{
+  lcd.clear();
+  lcd.setCursor(0, 0);
+  lcd.print("Humedad: ");
+  lcd.print(humedadLeida);
+  lcd.setCursor(0, 1);
+  lcd.print("Temp: ");
+  lcd.print(temperaturaLeida);
+});
 AsyncTask tskMonitoreo(100, []() {
   auto setup = []() {
-
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);   // pin 51 como salida
+    pinMode(PIN_LED_GREEN, OUTPUT);
+    pinMode(PIN_LED_BLUE, OUTPUT);
+    pinMode(PIN_LED_RED, OUTPUT);
+    tskLeerTemperatura.Start();
+    tskLeerHumedad.Start();
+    tskActualizarDisplay.Start();
   };
 
   auto loop = []() {
+    tskLeerTemperatura.Update();
+    tskLeerHumedad.Update();
+    tskActualizarDisplay.Update();
 
+    if (temperaturaLeida > umbralConfig.umbrTempHigh)
+    {
+      color(255, 0, 0);
+      temperaturaLeida = 0;
+      maquinaEstados.setEntradaActual(Entrada::TemperaturaCaliente);
+    }
+    else if (temperaturaLeida < umbralConfig.umbrTempLow)
+    {
+      color(0, 0, 255);
+    }
+    else if (temperaturaLeida > umbralConfig.umbrTempLow && temperaturaLeida < umbralConfig.umbrTempHigh)
+    {
+      color(0, 255, 0);
+    }
   };
 
   setup();
-  loop();
+  while (maquinaEstados.GetState() == Entrada::Monitorear) {
+    loop();
+  }
 });
+
+#pragma endregion
+
+#pragma region alarma
 AsyncTask tskAlarma(100, []() {
   auto setup = []() {
-
+    EasyBuzzer.setPin(PIN_BUZZER_PASIVO);
   };
 
   auto loop = []() {
-
+    EasyBuzzer.update();
+    EasyBuzzer.singleBeep(
+      300,  // Frequency in hertz(HZ).
+      2000   // Duration of the beep in milliseconds(ms).
+    );
   };
 
   setup();
-  loop();
+  while (maquinaEstados.GetState() == Estado::Alarma) {
+    loop();
+    for (int i = 2; i > 0; i--) {
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Espere ");
+      lcd.print(i);
+      lcd.println(" Secs");
+      delay(1000);
+    }
+    EasyBuzzer.stopBeep();
+    maquinaEstados.setEntradaActual(Entrada::Monitorear);
+  }
 });
+#pragma endregion
 #pragma endregion
 void configurarMaquinaEstado() {
   //Transiciones
@@ -520,10 +625,18 @@ void configurarMaquinaEstado() {
   });
   maquinaEstados.SetOnEntering(Configuracion, []() {
     Serial.println("Entrando a config");
+    color(0, 0, 0);
     tskConfiguracion.Start();
   });
-  maquinaEstados.SetOnEntering(Monitoreo, []() {});
-  maquinaEstados.SetOnEntering(Alarma, []() {});
+  maquinaEstados.SetOnEntering(Monitoreo, []() {
+    Serial.println("Entrando a monitorear");
+    color(0, 0, 0);
+    tskMonitoreo.Start();
+  });
+  maquinaEstados.SetOnEntering(Alarma, []() {
+    Serial.println("Entrando a la alarma");
+    tskAlarma.Start();
+  });
 
   //Al Salir
   maquinaEstados.SetOnLeaving(Inicio, []() {
@@ -531,14 +644,17 @@ void configurarMaquinaEstado() {
     Serial.println("La contraseña fue correcta");
   });
   maquinaEstados.SetOnLeaving(Configuracion, []() {
-    tskConfiguracion.Start();
+    tskConfiguracion.Stop();
     Serial.println("Saliendo de la configuracion");
   });
   maquinaEstados.SetOnLeaving(Monitoreo, []() {
-    Serial.println("Leaving A");
+    tskMonitoreo.Stop();
+    Serial.println("Saliendo del monitoreo");
   });
   maquinaEstados.SetOnLeaving(Alarma, []() {
-    Serial.println("Leaving A");
+    tskAlarma.Stop();
+    lcd.clear();
+    Serial.println("Saliendo de la alarma");
   });
 }
 
@@ -546,6 +662,19 @@ void configurarMaquinaEstado() {
 
 void botonPresionado() {
   Serial.println("Boton Presionado");
+  if (maquinaEstados.GetState() == Estado::Monitoreo) {
+    Serial.println("Pasando a configuracion");
+    maquinaEstados.setEntradaActual(Entrada::Configurar);
+  }
+  else if (maquinaEstados.GetState() == Estado::Configuracion) {
+    Serial.println("Pasando a monitorear");
+    lcd.clear();
+    maquinaEstados.setEntradaActual(Entrada::Monitorear);
+  }
+  else if (maquinaEstados.GetState() == Estado::Alarma) {
+    Serial.println("Pasando a configuracion desde alarma");
+    maquinaEstados.setEntradaActual(Entrada::Configurar);
+  }
 }
 
 void setup() {
@@ -574,5 +703,7 @@ void loop() {
   maquinaEstados.Update();
   tskSeguridad.Update();
   tskConfiguracion.Update();
+  tskMonitoreo.Update();
+  tskAlarma.Update();
 
 }
