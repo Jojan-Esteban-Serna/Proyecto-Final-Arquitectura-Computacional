@@ -25,5 +25,4 @@
 #define PIN_DHT 22
 #define PIN_PHOTOCELL 11
 #define PIN_BOTON 2
-#define WOKWI true
 #endif

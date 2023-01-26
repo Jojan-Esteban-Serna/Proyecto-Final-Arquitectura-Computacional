@@ -7,6 +7,7 @@
 #include <EasyBuzzer.h>
 #include <EEPROM.h>
 #include "Configuracion.h"
+#define WOKWI true
 #if WOKWI
 #include "StateMachineLib.h"
 #else
@@ -266,9 +267,11 @@ void umbLuzHighFunc();
 void umbLuzLowFunc();
 
 #pragma region Screens
-//char *messages[5] = { "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" };
+#if WOKWI
 char messages[5][16] = { {"1.UmbTempHigh"}, {"2.UmbTempLow"}, {"3.UmbLuzHigh"}, {"4.UmbLuzLow"}, {"5.Reset"} };
-
+#else
+char *messages[5] = { "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" };
+#endif
 LiquidScreen *lastScreen = nullptr;
 
 LiquidLine screen_1_line_1(0, 0, messages[0]);
