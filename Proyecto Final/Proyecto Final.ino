@@ -569,27 +569,33 @@ AsyncTask tskMonitoreo(100, []() {
 AsyncTask tskAlarma(100, []() {
   auto setup = []() {
     EasyBuzzer.setPin(PIN_BUZZER_PASIVO);
-  };
-
-  auto loop = []() {
-    EasyBuzzer.update();
     EasyBuzzer.singleBeep(
       300,  // Frequency in hertz(HZ).
       2000   // Duration of the beep in milliseconds(ms).
     );
   };
 
+
+  auto loop = []() {
+    EasyBuzzer.update();
+  };
   setup();
   while (maquinaEstados.GetState() == Estado::Alarma) {
     loop();
-    for (int i = 2; i > 0; i--) {
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    float checkpointTime = millis();
+    float elapsedTime = millis() - checkpointTime;
+    while (elapsedTime <= 2000) {
+      elapsedTime = millis() - checkpointTime;
+      float reversedTime = (2000 - elapsedTime) / 1000;
       lcd.clear();
-      lcd.setCursor(0, 0);
       lcd.print("Espere ");
-      lcd.print(i);
+      lcd.print(reversedTime, 2);
       lcd.println(" Secs");
-      delay(1000);
     }
+
+
     EasyBuzzer.stopBeep();
     maquinaEstados.setEntradaActual(Entrada::Monitorear);
   }
