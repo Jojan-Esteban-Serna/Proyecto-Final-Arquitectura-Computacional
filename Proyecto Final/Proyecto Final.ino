@@ -223,6 +223,7 @@ AsyncTask tskSeguridad(100, []() {
     tskLeerPassword.Start();
     tskDecisionPassword.Start();
     tskAwaitFiveSeconds.Start();
+    lcd.println("Ingrese Contra");
   };
 
   auto loop = []() {
