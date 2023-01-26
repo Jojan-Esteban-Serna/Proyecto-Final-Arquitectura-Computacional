@@ -539,7 +539,8 @@ AsyncTask tskConfiguracion(100, []() {
         return;
       }
       umbralConfig.umbrTempHigh = DEFAULT_TEMPHIGH;
-      umbralConfig.umbrTempLow = DEFAULT_TEMPLOW;
+      umbralConfig.umbrTempLow = DEFAULT_TEMPLOW;      
+      EEPROM.put(eepromBaseAddres, umbralConfig);
       menu.change_screen(lastScreen);
     });
     menu.update();
