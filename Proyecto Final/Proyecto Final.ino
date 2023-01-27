@@ -24,7 +24,7 @@
 #include <EasyBuzzer.h>
 #include <EEPROM.h>
 #include "Configuracion.h"
-#define WOKWI true
+#define WOKWI false
 #if WOKWI
 #include "StateMachineLib.h"
 #else
@@ -620,7 +620,8 @@ AsyncTask tskConfiguracion(100, []() {
         return;
       }
       umbralConfig.umbrTempHigh = DEFAULT_TEMPHIGH;
-      umbralConfig.umbrTempLow = DEFAULT_TEMPLOW;
+      umbralConfig.umbrTempLow = DEFAULT_TEMPLOW;      
+      EEPROM.put(eepromBaseAddres, umbralConfig);
       menu.change_screen(lastScreen);
     });
     menu.update();
@@ -823,6 +824,10 @@ void configurarMaquinaEstado() {
 
   //Al Salir
   maquinaEstados.SetOnLeaving(Inicio, []() {
+    tskLeerPassword.Stop();
+    tskAwaitTenSeconds.Stop();
+    tskDecisionPassword.Stop();
+    tskAwaitFiveSeconds.Stop();
     tskSeguridad.Stop();
     Serial.println("La contraseña fue correcta");
   });
@@ -831,6 +836,9 @@ void configurarMaquinaEstado() {
     Serial.println("Saliendo de la configuracion");
   });
   maquinaEstados.SetOnLeaving(Monitoreo, []() {
+    tskLeerTemperatura.Stop();
+    tskLeerHumedad.Stop();
+    tskActualizarDisplay.Stop();
     tskMonitoreo.Stop();
     Serial.println("Saliendo del monitoreo");
   });
@@ -860,7 +868,9 @@ void botonPresionado() {
 
 void setup() {
   pinMode(PIN_BOTON, INPUT_PULLUP);
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);
 
+  digitalWrite(PIN_BUZZER_PASIVO,LOW);
   attachInterrupt(digitalPinToInterrupt(PIN_BOTON), botonPresionado, RISING);
 
 #if defined(LiquidCrystal_I2C_h)
