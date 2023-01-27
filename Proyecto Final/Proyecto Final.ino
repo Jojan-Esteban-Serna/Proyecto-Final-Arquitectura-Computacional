@@ -557,26 +557,58 @@ void editar_valor(String titulo, int *varimp, bool (*isInRangeFunction)(int, int
 /**
  * @brief Función para editar el valor de UmbTempHigh
  * 
- * Esta función se encarga de mostrar en pantalla el valor actual de UmbTempHigh y permitir su edición. 
- * Utiliza la función "editar_valor" para mostrar el título, el valor actual y permitir la edición.
- * También utiliza la función "isInTempRange" para validar que el valor ingresado se encuentra dentro del rango permitido.
+ * @param[in] umbralConfig Estructura que contiene la configuración de los umbrales.
+ * @param[in] umbrTempHigh Puntero al valor del umbral alto de temperatura en la configuración.
+ * @param[in] isInTempRange Puntero a la función utilizada para verificar si el valor ingresado se encuentra en el rango permitido.
  */
 void umbTempHighFunc() {
   editar_valor("UmbTempHigh", &umbralConfig.umbrTempHigh, isInTempRange);
 };
-
+/**
+ * @brief Esta función se encarga de editar el valor del umbral bajo de temperatura en la configuración de UmbTempLow. 
+ * Utiliza la función "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la función "isInTempRange".
+ *
+ * @param[in] umbralConfig Estructura que contiene la configuración de los umbrales.
+ * @param[in] umbrTempLow Puntero al valor del umbral bajo de temperatura en la configuración.
+ * @param[in] isInTempRange Puntero a la función utilizada para verificar si el valor ingresado se encuentra en el rango permitido.
+ */
 void umbTempLowFunc() {
   editar_valor("UmbTempLow", &umbralConfig.umbrTempLow, isInTempRange);
 };
-
+/**
+ * @brief Esta función se encarga de editar el valor del umbral bajo de temperatura en la configuración de UmbTempLow. 
+ * Utiliza la función "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la función "isInTempRange".
+ *
+ * @param[in] umbralConfig Estructura que contiene la configuración de los umbrales.
+ * @param[in] UmbLuzHigh Puntero al valor del umbral alto de luz en la configuración.
+ * @param[in] isInTempRange Puntero a la función utilizada para verificar si el valor ingresado se encuentra en el rango permitido.
+ */
 void umbLuzHighFunc() {
   editar_valor("UmbLuzHigh", &umbralConfig.umbrLuzHigh, isInLightRange);
 };
+/**
+ * @brief Esta función se encarga de editar el valor del umbral bajo de temperatura en la configuración de UmbTempLow. 
+ * Utiliza la función "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la función "isInTempRange".
+ *
+ * @param[in] umbralConfig Estructura que contiene la configuración de los umbrales.
+ * @param[in] UmbLuzLow Puntero al valor del umbral bajo de luz en la configuración.
+ * @param[in] isInTempRange Puntero a la función utilizada para verificar si el valor ingresado se encuentra en el rango permitido.
+ */
 void umbLuzLowFunc() {
   editar_valor("UmbLuzLow", &umbralConfig.umbrLuzLow, isInLightRange);
 };
 
-
+ /**
+ *   @brief AsyncTask para configurar los umbrales de temperatura y luz.
+ *   @details El objeto AsyncTask "tskConfiguracion" se encarga de la configuración de los umbrales de temperatura y luz.
+ *   Al iniciar, se le proporciona un tiempo de ejecución de 100ms y una función lambda que contiene el código de configuración.
+ *   En la función de configuración, se carga la configuración actual desde la memoria EEPROM y se verifica si es válida.
+ *   Si no es válida, se establece la configuración predeterminada.
+ *   Luego se configura el modo de los pines correspondientes a los LEDs, se asignan funciones a los elementos de pantalla y se actualiza el menú.
+ *   En la función de bucle, se verifica si se ha presionado alguna tecla en el teclado y se realizan acciones correspondientes como cambiar de pantalla,
+ *   activar o desactivar el enfoque en el menú (la flecha), y llamar a funciones asociadas a cada elemento de pantalla.
+ *   El bucle se ejecutará mientras el estado de la máquina de estados sea configuración.
+*/
 AsyncTask tskConfiguracion(100, []() {
   auto setup = []() {
     EEPROM.get(eepromBaseAddres, umbralConfig);
@@ -656,7 +688,25 @@ AsyncTask tskConfiguracion(100, []() {
 });
 
 #pragma endregion
+/**
+*@defgroup monitoreo Monitoreo
+*@brief Sección del código donde se encuentra el codigo del monitoreo de temperatura y humedad
+*En esta sección del código se encuentran las funciones y variables relacionadas con el monitoreo,
+*contiene tareas y funciones relacionadas a esto
+*/
 #pragma region monitoreo
+/**
+ * @brief Verifica los errores devueltos por la librería DHTStable.
+ * 
+ * La función verificarErrores() recibe como parámetro un entero "chk" que representa el código de error devuelto por la librería DHTStable.
+ * Se utiliza un switch-case para analizar el código de error y imprimir en el monitor serie un mensaje descriptivo del error.
+ * Si el código de error es igual a DHTLIB_OK, se imprime "OK".
+ * Si el código de error es igual a DHTLIB_ERROR_CHECKSUM, se imprime "Checksum error".
+ * Si el código de error es igual a DHTLIB_ERROR_TIMEOUT, se imprime "Time out error".
+ * Si el código de error es desconocido, se imprime "Unknown error".
+ * 
+ * @param chk Código de error devuelto por la librería DHTStable.
+ */
 void verificarErrores(int chk) {
   switch (chk) {
     case DHTLIB_OK:
@@ -674,6 +724,14 @@ void verificarErrores(int chk) {
   }
 }
 float humedadLeida, temperaturaLeida;
+/**
+* @brief AsyncTask para leer la temperatura desde el sensor DHT
+* @details El objeto AsyncTask "tskLeerTemperatura" se encarga de la lectura de la temperatura desde el sensor DHT.
+* Al iniciar, se le proporciona un tiempo de ejecución de 2000ms y la opción de ejecutar en modo cíclico.
+* En su función lambda se realiza la lectura del sensor utilizando la librería DHTSatble, se verifica si existe algún error en la lectura
+* y se almacena el valor leído en la variable "temperaturaLeida". Además, se imprime el valor leído por el puerto serie.
+* Esta tarea es utilizada para actualizar periódicamente la lectura de la temperatura en la aplicación.
+*/
 AsyncTask tskLeerTemperatura(2000, true, []() {
 #if WOKWI
   int chk = DHT.read22(PIN_DHT);
@@ -685,7 +743,15 @@ AsyncTask tskLeerTemperatura(2000, true, []() {
   Serial.print("Temp: ");
   Serial.println(temperaturaLeida);
 });
-
+/**
+ * @brief AsyncTask para leer la humedad del sensor DHT
+ * 
+ * @details Este AsyncTask se encarga de leer la humedad del sensor DHT con una frecuencia
+ * especificada en el primer argumento (1000ms en este caso). Si el segundo argumento
+ * es true, el AsyncTask se repetirá constantemente. La función leerá la humedad del
+ * sensor DHT utilizando la librería DHTStable y almacenará el valor en la variable humedadLeida.
+ * También imprimirá el valor de humedad en el puerto serie.
+ */
 AsyncTask tskLeerHumedad(1000, true, []() {
 #if WOKWI
   int chk = DHT.read22(PIN_DHT);
@@ -697,7 +763,12 @@ AsyncTask tskLeerHumedad(1000, true, []() {
   Serial.print("Humd: ");
   Serial.println(humedadLeida);
 });
-
+/**
+ * @brief La tarea AsyncTask tskActualizarDisplay se encarga de actualizar los datos de humedad y temperatura en el display LCD cada 4 segundos.
+ *
+ * @details La tarea se ejecuta cada 4 segundos y actualiza los datos de humedad y temperatura en el display LCD.
+ *
+ */
 AsyncTask tskActualizarDisplay(4000, true, []() {
   lcd.clear();
   lcd.setCursor(0, 0);
