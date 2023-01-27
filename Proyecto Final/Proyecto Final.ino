@@ -778,6 +778,22 @@ AsyncTask tskActualizarDisplay(4000, true, []() {
   lcd.print("Temp: ");
   lcd.print(temperaturaLeida);
 });
+/**
+* @brief Tarea asíncrona para el monitoreo de alguna variable
+* @details La tarea asíncrona se encarga de monitorear alguna variable utilizando
+* varios subprocesos. Se inicializa con un intervalo de tiempo de 100ms
+* y tiene dos funciones anidadas, 'setup' y 'loop'. La función 'setup'
+* configura los pines para el uso del buzzer, los leds y arranca las
+* tareas de lectura de temperatura, humedad y actualización del display.
+* La función 'loop' se encarga de actualizar las tareas mencionadas
+* anteriormente y de cambiar el color de los leds dependiendo del valor
+* de la temperatura leída. Si la temperatura es mayor al umbral de temperatura
+* alta, el led rojo se encenderá y se cambiara el estado de la maquina. Si es menor al umbral de temperatura baja,
+* el led azul se encenderá. Si se encuentra entre ambos umbrales, el led verde
+* se encenderá.
+* El bucle principal de esta tarea se ejecuta mientras el estado de la máquina de
+* estados sea "Monitorear".
+*/
 AsyncTask tskMonitoreo(100, []() {
   auto setup = []() {
     pinMode(PIN_BUZZER_PASIVO, OUTPUT);  // pin 51 como salida
@@ -812,8 +828,21 @@ AsyncTask tskMonitoreo(100, []() {
 });
 
 #pragma endregion
-
+/**
+ * @defgroup alarma Alarma
+ * @brief Sección del código donde se encuentran las tareas asíncronas que hacen sonar la alarma
+ *
+ * En esta sección del código se encuentran las funciones y tareas asincronas relacionadas con la reproduccion de una alarma
+ */
 #pragma region alarma
+/**
+ * @brief AsyncTask para reproducir una alarma
+ * @details tskAlarma es una tarea asíncrona que se encarga de activar el buzzer
+ * y mostrar un mensaje en el LCD indicando la cantidad de segundos que
+ * quedan para desactivar la alarma. La alarma se activa mientras el estado
+ * de la máquina de estados sea Estado::Alarma. 
+ *
+ */
 AsyncTask tskAlarma(100, []() {
   auto setup = []() {
     EasyBuzzer.setPin(PIN_BUZZER_PASIVO);
@@ -850,6 +879,10 @@ AsyncTask tskAlarma(100, []() {
 });
 #pragma endregion
 #pragma endregion
+/**
+*@brief Configuar la maquina de estados
+*@details Configura las transiciones y las acciones al entrar y salir de cada estado de la máquina de estado
+*/
 void configurarMaquinaEstado() {
   //Transiciones
   maquinaEstados.AddTransition(Inicio, Configuracion, []() {
@@ -921,7 +954,10 @@ void configurarMaquinaEstado() {
 }
 
 #pragma endregion
-
+/**
+* @brief Funcion llamada cuando se presiona el boton.
+* @details Cambia el estado de la maquina de estados segun el estado actual.
+*/
 void botonPresionado() {
   Serial.println("Boton Presionado");
   if (maquinaEstados.GetState() == Estado::Monitoreo) {
@@ -936,7 +972,12 @@ void botonPresionado() {
     maquinaEstados.setEntradaActual(Entrada::Configurar);
   }
 }
-
+/**
+* @brief Configuracion del sistema
+* @details se establecen los modos de algunos pines, se configura una interrupción para cuando se presiona un botón y se inicializa una pantalla LCD. También se inicializa 
+* una comunicación serie para poder ver mensajes en la consola y se llama a la función llamada "configurarMaquinaEstado" que configura la máquina de estados. 
+* Finalmente, se establece el estado inicial de la máquina de estados.
+*/
 void setup() {
   pinMode(PIN_BOTON, INPUT_PULLUP);
     pinMode(PIN_BUZZER_PASIVO, OUTPUT);
@@ -959,7 +1000,11 @@ void setup() {
 
   maquinaEstados.SetState(Inicio, false, true);
 }
-
+/**
+*
+*@brief Función principal de ejecución
+*@details Esta función contiene el bucle principal del programa, en el cual se actualiza la máquina de estados y las tareas de seguridad, configuración, monitoreo y alarma.
+*/
 void loop() {
   maquinaEstados.Update();
   tskSeguridad.Update();
