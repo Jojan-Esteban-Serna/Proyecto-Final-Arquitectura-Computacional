@@ -143,23 +143,23 @@ enum Entrada {
  * Contiene métodos públicos para establecer y obtener la entrada actual, y un constructor para inicializar la máquina de estados.
  */
 class MaquinaDeEstados : public StateMachine {
-  private:
-    Entrada entradaActual;
-  public:
+private:
+  Entrada entradaActual;
+public:
 
 
-    MaquinaDeEstados()
-      : StateMachine(4, 6) {
-    }
+  MaquinaDeEstados()
+    : StateMachine(4, 6) {
+  }
 
-    void setEntradaActual(Entrada entrada) {
-      entradaActual = entrada;
-      Update();
-    }
+  void setEntradaActual(Entrada entrada) {
+    entradaActual = entrada;
+    Update();
+  }
 
-    Entrada getEntradaActual() {
-      return entradaActual;
-    }
+  Entrada getEntradaActual() {
+    return entradaActual;
+  }
 };
 /**
  * @var maquinaEstados
@@ -208,7 +208,13 @@ void color(unsigned char red, unsigned char green, unsigned char blue)  // the c
   analogWrite(PIN_LED_BLUE, blue);
   analogWrite(PIN_LED_GREEN, green);
 };
-
+/**
+ * @brief Tarea asíncrona para esperar 5 segundos
+ * @details Esta tarea se encarga de mostrar un mensaje en una pantalla LCD indicando al usuario que debe esperar 5 segundos antes de intentar nuevamente. 
+ * Se utiliza un bucle for para contar los segundos y mostrarlos en la pantalla.
+ * Si la variable flgEsperar es verdadera, se muestra el mensaje en la pantalla y se espera 1 segundo antes de continuar con la siguiente iteración del bucle.
+ * Al finalizar la espera, se limpia la pantalla y se muestra el mensaje "Sigue intentando", se detiene la señal del buzzer, se reinician las banderas y se reinicia el contador de intentos.
+ */
 AsyncTask tskAwaitFiveSeconds(300, true, []() {
   if (flgEsperar) {
     for (int i = 5; i > 0; i--) {
@@ -231,7 +237,12 @@ AsyncTask tskAwaitFiveSeconds(300, true, []() {
     intentos = 0;
   }
 });
-
+/**
+ * @brief Tarea asíncrona para esperar 10 segundos
+ * @details Esta tarea se encarga de esperar 10 segundos antes de mostrar un mensaje en una pantalla LCD indicando al usuario que debe intentar nuevamente.
+ * Se utiliza un delay de 10 segundos(El delay de la tarea) para detener la ejecución del código durante ese tiempo.
+ *  Al finalizar la espera, se limpia la pantalla, se coloca el cursor en la posición 0,0, se muestra el mensaje "time out: try again", se reinician las banderas "flgFirstCharacter" y "flgPasswordIngresado" y se establece flgPasswordcorrecto = false.
+ */
 AsyncTask tskAwaitTenSeconds(10000, false, []() {
   //verificarContrasenia();
   flgFirstCharacter = true;
@@ -241,7 +252,12 @@ AsyncTask tskAwaitTenSeconds(10000, false, []() {
   lcd.setCursor(0, 0);
   lcd.print("time out: try again");
 });
-
+/**
+ * @brief Función para verificar contraseña
+ * @details Esta función se encarga de comparar una contraseña almacenada previamente con una contraseña leida. 
+ * Si las contraseñas coinciden se muestra un mensaje "Contraseña correcta" en la consola serial y en una pantalla LCD y se establece la bandera flgPasswordcorrecto = true
+ * Si las contraseñas no coinciden se muestra un mensaje "Contraseña incorrecta" en la consola serial y en una pantalla LCD y se establece la bandera flgPasswordcorrecto = false
+ */
 void verificarContrasenia() {
   if (contrasenia.equals(contrasenia_leida)) {
     Serial.println("Contraseña correcta");
@@ -257,25 +273,30 @@ void verificarContrasenia() {
     flgPasswordcorrecto = false;
   }
 }
-
+/*****************************************************************************
+*@brief Tarea asíncrona para leer contraseña
+*@details Esta tarea asíncrona se encarga de leer caracteres de un teclado y mostrarlos en una pantalla LCD como asteriscos.
+*Si se presiona la tecla '*' o se han ingresado 8 caracteres, se llama a la función verificarContrasenia() para comparar la contraseña ingresada con una almacenada previamente.
+*También se manejan banderas flgPuedeLeer, flgQuedanIntentos, flgFirstCharacter y flgPasswordIngresado para controlar el estado de la tarea y evitar ingresos no deseados.
+*/
 AsyncTask tskLeerPassword(100, true, []() {
   if (flgPuedeLeer && flgQuedanIntentos) {
     char key = keypad.getKey();
 
-    if (key == '*'  || conteoCaracteres == 8) {
+    if (key == '*' || conteoCaracteres == 8) {
       verificarContrasenia();
       tskAwaitTenSeconds.Stop();
       flgFirstCharacter = true;
       flgPasswordIngresado = true;
     }
 
-    if (key  != '*' && key != NO_KEY) {
+    if (key != '*' && key != NO_KEY) {
       if (flgFirstCharacter) {
         tskAwaitTenSeconds.Start();
         flgFirstCharacter = false;
       }
       tskAwaitTenSeconds.Reset();
-      contrasenia_leida += key ;
+      contrasenia_leida += key;
       conteoCaracteres++;
       Serial.print("Contraseña leida: ");
       Serial.println(contrasenia_leida);
@@ -287,7 +308,15 @@ AsyncTask tskLeerPassword(100, true, []() {
     }
   }
 });
+/**
+* @brief Tarea asíncrona para tomar decision de una contraseña
 
+* @details  tskDecisionPassword es una tarea asíncrona que se encarga de tomar
+*         una decisión basada en el resultado de la contraseña ingresada
+*         previamente.
+*
+*
+*/
 AsyncTask tskDecisionPassword(200, true, []() {
   if (flgPasswordIngresado && !flgEsperar) {
     contrasenia_leida = "";
@@ -315,11 +344,19 @@ AsyncTask tskDecisionPassword(200, true, []() {
     }
   }
 });
-
+/**
+*@brief AsyncTask que se encarga de manejar la seguridad del sistema
+*@details En este AsyncTask se encuentra el loop principal de la seguridad del sistema.
+*En el se inicializan los pines necesarios para el funcionamiento del sistema, 
+*se inician las tareas necesarias para el funcionamiento del sistema y se actualizan los estados de las tareas y componentes del sistema.
+*Dentro del loop se encuentra la llamada a las funciones de actualizacion de las tareas de lectura de contraseña, espera de 10 segundos, 
+*toma de decisiones y espera de 5 segundos. También se encuentra la llamada a la función de actualización del buzzer pasivo.
+*El loop se encuentra dentro de un while que se mantiene activo mientras el estado de la máquina de estados sea el de Inicio.
+*/
 AsyncTask tskSeguridad(100, []() {
   Serial.println("Entre hasta aqui");
   auto setup = []() {
-    pinMode(PIN_BUZZER_PASIVO, OUTPUT);   // pin 8 como salida
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);  // pin 8 como salida
     Serial.begin(9600);
     pinMode(PIN_LED_GREEN, OUTPUT);
     pinMode(PIN_LED_BLUE, OUTPUT);
@@ -348,8 +385,23 @@ AsyncTask tskSeguridad(100, []() {
 });
 
 #pragma endregion
-
+/**
+*@defgroup menu Menu
+*@brief Sección del código donde se encuentra el menú de opciones
+*En esta sección del código se encuentran las funciones y variables relacionadas con el menú de opciones del sistema,
+*permitiendo al usuario acceder a diferentes funcionalidades y configuraciones del mismo.
+*/
 #pragma region menu
+/**
+*@struct Umbrales
+*@brief Estructura que contiene los umbrales de control del sistema
+*Esta estructura contiene los siguientes atributos:
+*checkKey: representa una clave de verificación que se usa para evitar leer basura de la memoria EEPROM en el primer inicio del sistema
+*umbrTempHigh: representa el umbral alto de temperatura
+*umbrTempLow: representa el umbral bajo de temperatura
+*umbrLuzHigh: representa el umbral alto de luz
+*umbrLuzLow: representa el umbral bajo de luz
+*/
 typedef struct Umbrales {
   int checkKey;
   int umbrTempHigh;
@@ -372,7 +424,7 @@ void umbLuzLowFunc();
 
 #pragma region Screens
 #if WOKWI
-char messages[5][16] = { {"1.UmbTempHigh"}, {"2.UmbTempLow"}, {"3.UmbLuzHigh"}, {"4.UmbLuzLow"}, {"5.Reset"} };
+char messages[5][16] = { { "1.UmbTempHigh" }, { "2.UmbTempLow" }, { "3.UmbLuzHigh" }, { "4.UmbLuzLow" }, { "5.Reset" } };
 #else
 char *messages[5] = { "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" };
 #endif
@@ -401,7 +453,11 @@ LiquidScreen screen_5(screen_5_line_1, screen_5_line_2);
 LiquidMenu menu(lcd, screen_1, screen_2, screen_3, screen_4);
 
 #pragma endregion
-
+/**
+* @brief Esta funcion lee un numero ingresado desde el teclado y lo devuelve como un entero
+* @param None
+* @return int numero ingresado desde el teclado, o un codigo que indica error
+*/
 int readNumber() {
   lcd.setCursor(0, 1);
 
@@ -433,16 +489,34 @@ int readNumber() {
   }
   return strNumber.toInt();
 }
-
+/**
+* @brief Evalua si un numero se encuentra en el rango de temperatura especificado
+* @param number numero a evaluar
+* @param varimp Puntero al limite inferior o superior del rango de temperatura
+* @return true si el numero se encuentra en el rango, false en caso contrario
+*/
 bool isInTempRange(int number, int *varimp) {
   return ((varimp == &umbralConfig.umbrTempLow && number < umbralConfig.umbrTempHigh || varimp == &umbralConfig.umbrTempHigh && number > umbralConfig.umbrTempLow) && number <= MAX_TEMP);
 }
-
+/**
+* @brief Comprueba si un número está dentro del rango especificado de un umbral de luz.
+*
+* @param number Número a comprobar
+* @param varimp Puntero al umbral a comparar. Puede ser el umbral alto o bajo.
+*
+* @return true si el número está dentro del rango especificado, false en caso contrario.
+*/
 bool isInLightRange(int number, int *varimp) {
   return ((varimp == &umbralConfig.umbrLuzLow && number < umbralConfig.umbrLuzHigh || varimp == &umbralConfig.umbrLuzHigh && number > umbralConfig.umbrLuzLow) && number <= MAX_LIGTH);
 }
 
-
+/**
+ * @brief Permite al usuario editar un valor específico en pantalla
+ * 
+ * @param titulo El título a mostrar en la pantalla para indicar cual valor se está editando
+ * @param varimp Puntero al valor a editar
+ * @param isInRangeFunction Puntero a función para verificar que el valor ingresado está en el rango permitido
+ */
 void editar_valor(String titulo, int *varimp, bool (*isInRangeFunction)(int, int *)) {
   menu.change_screen(&screen_5);
   lcd.setCursor(0, 0);
@@ -480,6 +554,13 @@ void editar_valor(String titulo, int *varimp, bool (*isInRangeFunction)(int, int
 
   menu.change_screen(lastScreen);
 }
+/**
+ * @brief Función para editar el valor de UmbTempHigh
+ * 
+ * Esta función se encarga de mostrar en pantalla el valor actual de UmbTempHigh y permitir su edición. 
+ * Utiliza la función "editar_valor" para mostrar el título, el valor actual y permitir la edición.
+ * También utiliza la función "isInTempRange" para validar que el valor ingresado se encuentra dentro del rango permitido.
+ */
 void umbTempHighFunc() {
   editar_valor("UmbTempHigh", &umbralConfig.umbrTempHigh, isInTempRange);
 };
@@ -497,7 +578,6 @@ void umbLuzLowFunc() {
 
 
 AsyncTask tskConfiguracion(100, []() {
-
   auto setup = []() {
     EEPROM.get(eepromBaseAddres, umbralConfig);
     if (umbralConfig.checkKey != umbralBaseConfig.checkKey) {
@@ -571,16 +651,13 @@ AsyncTask tskConfiguracion(100, []() {
   setup();
   while (maquinaEstados.GetState() == Estado::Configuracion) {
     loop();
-
   }
 });
 
 #pragma endregion
 #pragma region monitoreo
-void verificarErrores(int chk)
-{
-  switch (chk)
-  {
+void verificarErrores(int chk) {
+  switch (chk) {
     case DHTLIB_OK:
       Serial.print("OK,\t");
       break;
@@ -596,12 +673,11 @@ void verificarErrores(int chk)
   }
 }
 float humedadLeida, temperaturaLeida;
-AsyncTask tskLeerTemperatura(2000, true, []()
-{
+AsyncTask tskLeerTemperatura(2000, true, []() {
 #if WOKWI
   int chk = DHT.read22(PIN_DHT);
 #else
-  int chk = DHT.read11(PIN_DHT);
+    int chk = DHT.read11(PIN_DHT);
 #endif
   verificarErrores(chk);
   temperaturaLeida = DHT.getTemperature();
@@ -609,12 +685,11 @@ AsyncTask tskLeerTemperatura(2000, true, []()
   Serial.println(temperaturaLeida);
 });
 
-AsyncTask tskLeerHumedad(1000, true, []()
-{
+AsyncTask tskLeerHumedad(1000, true, []() {
 #if WOKWI
   int chk = DHT.read22(PIN_DHT);
 #else
-  int chk = DHT.read11(PIN_DHT);
+    int chk = DHT.read11(PIN_DHT);
 #endif
   verificarErrores(chk);
   humedadLeida = DHT.getHumidity();
@@ -622,8 +697,7 @@ AsyncTask tskLeerHumedad(1000, true, []()
   Serial.println(humedadLeida);
 });
 
-AsyncTask tskActualizarDisplay(4000, true, []()
-{
+AsyncTask tskActualizarDisplay(4000, true, []() {
   lcd.clear();
   lcd.setCursor(0, 0);
   lcd.print("Humedad: ");
@@ -634,7 +708,7 @@ AsyncTask tskActualizarDisplay(4000, true, []()
 });
 AsyncTask tskMonitoreo(100, []() {
   auto setup = []() {
-    pinMode(PIN_BUZZER_PASIVO, OUTPUT);   // pin 51 como salida
+    pinMode(PIN_BUZZER_PASIVO, OUTPUT);  // pin 51 como salida
     pinMode(PIN_LED_GREEN, OUTPUT);
     pinMode(PIN_LED_BLUE, OUTPUT);
     pinMode(PIN_LED_RED, OUTPUT);
@@ -648,18 +722,13 @@ AsyncTask tskMonitoreo(100, []() {
     tskLeerHumedad.Update();
     tskActualizarDisplay.Update();
 
-    if (temperaturaLeida > umbralConfig.umbrTempHigh)
-    {
+    if (temperaturaLeida > umbralConfig.umbrTempHigh) {
       color(255, 0, 0);
       temperaturaLeida = 0;
       maquinaEstados.setEntradaActual(Entrada::TemperaturaCaliente);
-    }
-    else if (temperaturaLeida < umbralConfig.umbrTempLow)
-    {
+    } else if (temperaturaLeida < umbralConfig.umbrTempLow) {
       color(0, 0, 255);
-    }
-    else if (temperaturaLeida > umbralConfig.umbrTempLow && temperaturaLeida < umbralConfig.umbrTempHigh)
-    {
+    } else if (temperaturaLeida > umbralConfig.umbrTempLow && temperaturaLeida < umbralConfig.umbrTempHigh) {
       color(0, 255, 0);
     }
   };
@@ -678,7 +747,7 @@ AsyncTask tskAlarma(100, []() {
     EasyBuzzer.setPin(PIN_BUZZER_PASIVO);
     EasyBuzzer.singleBeep(
       300,  // Frequency in hertz(HZ).
-      2000   // Duration of the beep in milliseconds(ms).
+      2000  // Duration of the beep in milliseconds(ms).
     );
   };
 
@@ -779,13 +848,11 @@ void botonPresionado() {
   if (maquinaEstados.GetState() == Estado::Monitoreo) {
     Serial.println("Pasando a configuracion");
     maquinaEstados.setEntradaActual(Entrada::Configurar);
-  }
-  else if (maquinaEstados.GetState() == Estado::Configuracion) {
+  } else if (maquinaEstados.GetState() == Estado::Configuracion) {
     Serial.println("Pasando a monitorear");
     lcd.clear();
     maquinaEstados.setEntradaActual(Entrada::Monitorear);
-  }
-  else if (maquinaEstados.GetState() == Estado::Alarma) {
+  } else if (maquinaEstados.GetState() == Estado::Alarma) {
     Serial.println("Pasando a configuracion desde alarma");
     maquinaEstados.setEntradaActual(Entrada::Configurar);
   }
@@ -810,7 +877,6 @@ void setup() {
   Serial.println("Start Machine Started");
 
   maquinaEstados.SetState(Inicio, false, true);
-
 }
 
 void loop() {
@@ -819,5 +885,4 @@ void loop() {
   tskConfiguracion.Update();
   tskMonitoreo.Update();
   tskAlarma.Update();
-
 }
