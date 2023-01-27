@@ -1,0 +1,2624 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;\red0\green128\blue0;\red96\green64\blue32;\rede0\green128\blue0;\red128\green0\blue0;\red128\green96\blue32;\red0\green32\blue128;\red0\green128\blue128;\red255\green0\blue255;\red0\green0\blue0;\red112\green0\blue112;\red255\green0\blue0;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext50 Code Example 9;}
+{\s50\li3600\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext51 Code Example 10;}
+{\s51\li3960\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext52 Code Example 11;}
+{\s52\li4320\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 12;}
+{\s53\li4680\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext53 Code Example 13;}
+{\s60\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext61 List Continue 0;}
+{\s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext62 List Continue 1;}
+{\s62\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext63 List Continue 2;}
+{\s63\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext64 List Continue 3;}
+{\s64\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext65 List Continue 4;}
+{\s65\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext66 List Continue 5;}
+{\s66\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext67 List Continue 6;}
+{\s67\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext68 List Continue 7;}
+{\s68\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext69 List Continue 8;}
+{\s69\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext70 List Continue 9;}
+{\s70\li3600\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext71 List Continue 10;}
+{\s71\li3960\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext72 List Continue 11;}
+{\s72\li4320\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 12;}
+{\s73\li4680\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext73 List Continue 13;}
+{\s80\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext81 DescContinue 0;}
+{\s81\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext82 DescContinue 1;}
+{\s82\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext83 DescContinue 2;}
+{\s83\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext84 DescContinue 3;}
+{\s84\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext85 DescContinue 4;}
+{\s85\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext86 DescContinue 5;}
+{\s86\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext87 DescContinue 6;}
+{\s87\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext88 DescContinue 7;}
+{\s88\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext89 DescContinue 8;}
+{\s89\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext90 DescContinue 9;}
+{\s90\li3600\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext91 DescContinue 10;}
+{\s91\li3960\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext92 DescContinue 11;}
+{\s92\li4320\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 12;}
+{\s93\li4680\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext93 DescContinue 13;}
+{\s100\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext101 LatexTOC 0;}
+{\s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext102 LatexTOC 1;}
+{\s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext103 LatexTOC 2;}
+{\s103\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext104 LatexTOC 3;}
+{\s104\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext105 LatexTOC 4;}
+{\s105\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext106 LatexTOC 5;}
+{\s106\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext107 LatexTOC 6;}
+{\s107\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext108 LatexTOC 7;}
+{\s108\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext109 LatexTOC 8;}
+{\s109\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext110 LatexTOC 9;}
+{\s110\li3600\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext111 LatexTOC 10;}
+{\s111\li3960\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext112 LatexTOC 11;}
+{\s112\li4320\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 12;}
+{\s113\li4680\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext113 LatexTOC 13;}
+{\s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext121 \sautoupd List Bullet 0;}
+{\s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext122 \sautoupd List Bullet 1;}
+{\s122\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext123 \sautoupd List Bullet 2;}
+{\s123\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext124 \sautoupd List Bullet 3;}
+{\s124\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext125 \sautoupd List Bullet 4;}
+{\s125\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext126 \sautoupd List Bullet 5;}
+{\s126\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext127 \sautoupd List Bullet 6;}
+{\s127\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext128 \sautoupd List Bullet 7;}
+{\s128\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext129 \sautoupd List Bullet 8;}
+{\s129\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext130 \sautoupd List Bullet 9;}
+{\s130\fi-360\li3960\widctlpar\jclisttab\tx3960{\*\pn \pnlvlbody\ilvl0\ls11\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext131 \sautoupd List Bullet 10;}
+{\s131\fi-360\li4320\widctlpar\jclisttab\tx4320{\*\pn \pnlvlbody\ilvl0\ls12\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext132 \sautoupd List Bullet 11;}
+{\s132\fi-360\li4680\widctlpar\jclisttab\tx4680{\*\pn \pnlvlbody\ilvl0\ls13\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 12;}
+{\s133\fi-360\li5040\widctlpar\jclisttab\tx5040{\*\pn \pnlvlbody\ilvl0\ls14\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext133 \sautoupd List Bullet 13;}
+{\s140\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext141 \sautoupd List Enum 0;}
+{\s141\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext142 \sautoupd List Enum 1;}
+{\s142\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext143 \sautoupd List Enum 2;}
+{\s143\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext144 \sautoupd List Enum 3;}
+{\s144\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext145 \sautoupd List Enum 4;}
+{\s145\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext146 \sautoupd List Enum 5;}
+{\s146\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext147 \sautoupd List Enum 6;}
+{\s147\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext148 \sautoupd List Enum 7;}
+{\s148\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext149 \sautoupd List Enum 8;}
+{\s149\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext150 \sautoupd List Enum 9;}
+{\s150\fi-360\li3960\widctlpar\fs20\cgrid \sbasedon0 \snext151 \sautoupd List Enum 10;}
+{\s151\fi-360\li4320\widctlpar\fs20\cgrid \sbasedon0 \snext152 \sautoupd List Enum 11;}
+{\s152\fi-360\li4680\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 12;}
+{\s153\fi-360\li5040\widctlpar\fs20\cgrid \sbasedon0 \snext153 \sautoupd List Enum 13;}
+}
+{\info 
+{\title {\comment Proyecto-Final-Arquitectura-Computaciona  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+1.0 \par
+}}Proyecto-Final-Arquitectura-Computaciona}
+{\comment Generated by doxygen 1.9.5.}
+{\creatim \yr2023\mo1\dy27\hr1\min23\sec11}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt Proyecto-Final-Arquitectura-Computaciona}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version 1.0\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt Fri Jan 27 2023 }}\par
+\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Proyecto Final Arquitectura Computacional\par \pard\plain 
+{\tc \v Proyecto Final Arquitectura Computacional}
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Author\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+Jojan Esteban Serna Serna \par
+Santiago Agredo Vallejo \par
+}}{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Date\par}\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+26 de Enero de 2023\par
+}}{\bkmkstart AAAAAAAAEV}
+{\bkmkend AAAAAAAAEV}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Descripci\'F3n
+\par}
+{\tc\tcl2 \v Descripci\'F3n}
+Este proyecto est\'E1 dise\'F1ado para utilizar sensores para monitorear la temperatura y utilizar m\'E1quinas de Mealy y tareas as\'EDncronas para realizar funciones de seguridad, configuraci\'F3n y monitoreo en un sistema basado en Arduino.\par}
+{\bkmkstart AAAAAAAAEW}
+{\bkmkend AAAAAAAAEW}
+{{\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Objetivos
+\par}
+{\tc\tcl2 \v Objetivos}
+{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Utilizar sensores para monitorear la temperatura\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Implementar m\'E1quinas de Mealy para controlar el flujo de datos\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Implementar tareas as\'EDncronas para manejar tareas de seguridad, configuraci\'F3n y monitoreo en paralelo\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Crear una interfaz f\'E1cil de usar para configurar y monitorear el sistema \par}
+\par
+\par}
+}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Module Index\par \pard\plain 
+{\tc \v Module Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Modules\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all modules:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+Sensor de Temperatura\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Configuraci\'F3n del Teclado\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Configuraci\'F3n del LCD\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Configuraci\'F3n de la M\'E1quina de Estados y las Tareas As\'EDncronas\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAED \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Tareas\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Seguridad\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEF \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Menu\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEG \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Monitoreo\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEH \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Alarma\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Hierarchical Index\par \pard\plain 
+{\tc \v Hierarchical Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Class Hierarchy\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid This inheritance list is sorted roughly, but not completely, alphabetically:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+Entrada\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEJ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+Estado\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEK \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+StateMachine
+{
+\par
+\pard\plain \s102\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+MaquinaDeEstados\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+}\par
+Umbrales\tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEP \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Data Structure Index\par \pard\plain 
+{\tc \v Data Structure Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Data Structures\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the data structures with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b Entrada} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Enumeraci\'F3n para las entradas a la m\'E1quina de estados })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEJ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b Estado} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Enumeraci\'F3n para los estados en los que se puede encontrar el sistema })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEK \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b MaquinaDeEstados} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Clase que implementa una m\'E1quina de estados para controlar el funcionamiento del sistema })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b Umbrales} ({\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Estructura que contiene los umbrales de control del sistema Esta estructura contiene los siguientes atributos: checkKey: representa una clave de verificaci\'F3n que se usa para evitar leer basura de la memoria EEPROM en el primer inicio del sistema umbrTempHigh: representa el umbral alto de temperatura umbrTempLow: representa el umbral bajo de temperatura umbrLuzHigh: representa el umbral alto de luz umbrLuzLow: representa el umbral bajo de luz })} \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAEP \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Index\par \pard\plain 
+{\tc \v File Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+File List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here is a list of all files with brief descriptions:}
+{
+\par
+\pard\plain \s101\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b Configuracion.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAB \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b Configuracion.h} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAC \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b Proyecto Final.c} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAX \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Module Documentation{\tc \v Module Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Sensor de Temperatura\par \pard\plain 
+{\tc\tcl2 \v Sensor de Temperatura}
+{\xe \v Sensor de Temperatura}
+{\bkmkstart AAAAAAAAEA}
+{\bkmkend AAAAAAAAEA}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de la inicializaci\'F3n y uso del sensor de temperatura DHT mediante la librer\'EDa DHTStable. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de la inicializaci\'F3n y uso del sensor de temperatura DHT mediante la librer\'EDa DHTStable. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+La secci\'F3n de c\'F3digo marcada con el pragma "region sensor_temperatura" contiene el c\'F3digo relacionado con el sensor de temperatura utilizado en el proyecto. En este caso, se est\'E1 utilizando la librer\'EDa DHTStable para interactuar con el sensor DHT. La variable DHT se utiliza para crear un objeto de la clase DHTStable, el cual se utiliza para recoger y procesar los datos del sensor. La secci\'F3n termina con el pragma "endregion" indicando el final de esta secci\'F3n de c\'F3digo. \par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Configuraci\'F3n del Teclado\par \pard\plain 
+{\tc\tcl2 \v Configuraci\'F3n del Teclado}
+{\xe \v Configuraci\'F3n del Teclado}
+{\bkmkstart AAAAAAAAEB}
+{\bkmkend AAAAAAAAEB}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de configurar y utilizar un teclado matricial de 4x4 conectado mediante pines de entrada y salida. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de configurar y utilizar un teclado matricial de 4x4 conectado mediante pines de entrada y salida. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En esta secci\'F3n se definen las constantes ROWS y COLS, que indican el n\'FAmero de filas y columnas del teclado. Tambi\'E9n se declara una matriz "keys" que contiene los caracteres asociados a cada tecla del teclado. Se declaran dos arreglos "rowPins" y "colPins" que contienen los pines de entrada y salida respectivamente, conectados al teclado. Se crea un objeto "keypad" de la clase "Keypad" utilizando la funci\'F3n "makeKeymap" para asociar la matriz "keys" con los pines de entrada y salida. La secci\'F3n termina con el pragma "endregion" indicando el final de esta secci\'F3n de c\'F3digo. \par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Configuraci\'F3n del LCD\par \pard\plain 
+{\tc\tcl2 \v Configuraci\'F3n del LCD}
+{\xe \v Configuraci\'F3n del LCD}
+{\bkmkstart AAAAAAAAEC}
+{\bkmkend AAAAAAAAEC}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de configurar y utilizar una pantalla LCD conectada mediante I2C o pines de entrada y salida. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de configurar y utilizar una pantalla LCD conectada mediante I2C o pines de entrada y salida. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En esta secci\'F3n se utilizan las directivas de preprocesador "#if defined" y "#elif defined" para determinar si se est\'E1 utilizando la librer\'EDa "LiquidCrystal_I2C" o "LiquidCrystal" para interactuar con el LCD. En caso de utilizar la librer\'EDa "LiquidCrystal_I2C", se crea un objeto "lcd" de la clase "LiquidCrystal_I2C" con una direcci\'F3n I2C espec\'EDfica y un tama\'F1o de 16 columnas y 2 filas. En caso de utilizar la librer\'EDa "LiquidCrystal", se crea un objeto "lcd" de la clase "LiquidCrystal" utilizando pines espec\'EDficos para las entradas RS, EN, D4, D5, D6 y D7. La secci\'F3n termina con el pragma "endregion" indicando el final de esta secci\'F3n de c\'F3digo. \par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Configuraci\'F3n de la M\'E1quina de Estados y las Tareas As\'EDncronas\par \pard\plain 
+{\tc\tcl2 \v Configuraci\'F3n de la M\'E1quina de Estados y las Tareas As\'EDncronas}
+{\xe \v Configuraci\'F3n de la M\'E1quina de Estados y las Tareas As\'EDncronas}
+{\bkmkstart AAAAAAAAED}
+{\bkmkend AAAAAAAAED}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de configurar y utilizar una m\'E1quina de estados y tareas as\'EDncronas para controlar el comportamiento del sistema. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n de c\'F3digo encargada de configurar y utilizar una m\'E1quina de estados y tareas as\'EDncronas para controlar el comportamiento del sistema. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En esta secci\'F3n se configura y se utiliza una m\'E1quina de estados y tareas as\'EDncronas para controlar el comportamiento del sistema. La secci\'F3n termina con el pragma "endregion" indicando el final de esta secci\'F3n de c\'F3digo. \par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Tareas\par \pard\plain 
+{\tc\tcl2 \v Tareas}
+{\xe \v Tareas}
+{\bkmkstart AAAAAAAAEE}
+{\bkmkend AAAAAAAAEE}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentran las tareas as\'EDncronas del sistema. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentran las tareas as\'EDncronas del sistema. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En esta secci\'F3n del c\'F3digo se encuentran las funciones y variables relacionadas con las tareas as\'EDncronas del sistema, tales como la lectura de sensores, actualizaci\'F3n de pantallas y manejo de alarmas. \par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Seguridad\par \pard\plain 
+{\tc\tcl2 \v Seguridad}
+{\xe \v Seguridad}
+{\bkmkstart AAAAAAAAEF}
+{\bkmkend AAAAAAAAEF}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentran las funciones de seguridad. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentran las funciones de seguridad. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En esta secci\'F3n del c\'F3digo se encuentran las funciones y variables relacionadas con la seguridad del sistema, tales como el manejo de contrase\'F1as y la autenticaci\'F3n del usuario \par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Menu\par \pard\plain 
+{\tc\tcl2 \v Menu}
+{\xe \v Menu}
+{\bkmkstart AAAAAAAAEG}
+{\bkmkend AAAAAAAAEG}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentra el men\'FA de opciones En esta secci\'F3n del c\'F3digo se encuentran las funciones y variables relacionadas con el men\'FA de opciones del sistema, permitiendo al usuario acceder a diferentes funcionalidades y configuraciones del mismo. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentra el men\'FA de opciones En esta secci\'F3n del c\'F3digo se encuentran las funciones y variables relacionadas con el men\'FA de opciones del sistema, permitiendo al usuario acceder a diferentes funcionalidades y configuraciones del mismo. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Monitoreo\par \pard\plain 
+{\tc\tcl2 \v Monitoreo}
+{\xe \v Monitoreo}
+{\bkmkstart AAAAAAAAEH}
+{\bkmkend AAAAAAAAEH}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentra el codigo del monitoreo de temperatura y humedad En esta secci\'F3n del c\'F3digo se encuentran las funciones y variables relacionadas con el monitoreo, contiene tareas y funciones relacionadas a esto. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentra el codigo del monitoreo de temperatura y humedad En esta secci\'F3n del c\'F3digo se encuentran las funciones y variables relacionadas con el monitoreo, contiene tareas y funciones relacionadas a esto. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Alarma\par \pard\plain 
+{\tc\tcl2 \v Alarma}
+{\xe \v Alarma}
+{\bkmkstart AAAAAAAAEI}
+{\bkmkend AAAAAAAAEI}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentran las tareas as\'EDncronas que hacen sonar la alarma. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Secci\'F3n del c\'F3digo donde se encuentran las tareas as\'EDncronas que hacen sonar la alarma. \par
+}{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En esta secci\'F3n del c\'F3digo se encuentran las funciones y tareas asincronas relacionadas con la reproduccion de una alarma \par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Data Structure Documentation{\tc \v Data Structure Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Entrada Struct Reference\par \pard\plain 
+{\tc\tcl2 \v Entrada}
+{\xe \v Entrada}
+{\bkmkstart AAAAAAAAEJ}
+{\bkmkend AAAAAAAAEJ}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Enumeraci\'F3n para las entradas a la m\'E1quina de estados. }}\par
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Enumeraci\'F3n para las entradas a la m\'E1quina de estados. \par
+}
+
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta enumeraci\'F3n representa las diferentes entradas a la m\'E1quina de estados.{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Desconocida: {\b Entrada} no reconocida.\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Configurar: {\b Entrada} para cambiar al estado de configuraci\'F3n.\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Monitorear: {\b Entrada} para cambiar al estado de monitoreo.\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+TemperaturaCaliente: {\b Entrada} que indica que la temperatura ha superado el l\'EDmite establecido. \par}
+\par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this struct was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Proyecto Final.c}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Estado Struct Reference\par \pard\plain 
+{\tc\tcl2 \v Estado}
+{\xe \v Estado}
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Enumeraci\'F3n para los estados en los que se puede encontrar el sistema. }}\par
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Enumeraci\'F3n para los estados en los que se puede encontrar el sistema. \par
+}
+
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta enumeraci\'F3n representa los diferentes estados en los que se puede encontrar el sistema.{
+\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Inicio: {\b Estado} inicial del sistema, en el que se realizan las configuraciones necesarias antes de comenzar a funcionar y se solicita la contrase\'F1a\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Configuracion: {\b Estado} en el que se permite al usuario configurar las opciones del sistema.\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Monitoreo: {\b Estado} en el que el sistema se encarga de monitorear continuamente los sensores.\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Alarma: {\b Estado} en el que se activa la alarma debido a una condici\'F3n determinada. \par}
+\par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this struct was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Proyecto Final.c}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+MaquinaDeEstados Class Reference\par \pard\plain 
+{\tc\tcl2 \v MaquinaDeEstados}
+{\xe \v MaquinaDeEstados}
+{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Clase que implementa una m\'E1quina de estados para controlar el funcionamiento del sistema. }}\par
+Inheritance diagram for MaquinaDeEstados:{
+\pard\plain 
+\par\pard \qc {\field\flddirty {\*\fldinst INCLUDEPICTURE "class_maquina_de_estados.png" \\d \\*MERGEFORMAT}{\fldrslt IMAGE}}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b MaquinaDeEstados} ()\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b setEntradaActual} ({\b Entrada} entrada)\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Entrada} {\b getEntradaActual} ()\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Clase que implementa una m\'E1quina de estados para controlar el funcionamiento del sistema. \par
+}
+
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta clase hereda de la clase StateMachine y se utiliza para controlar el funcionamiento del sistema a trav\'E9s de una m\'E1quina de estados.\par
+La clase tiene un atributo privado de tipo {\b Entrada} que representa la entrada actual a la m\'E1quina de estados.\par
+Contiene m\'E9todos p\'FAblicos para establecer y obtener la entrada actual, y un constructor para inicializar la m\'E1quina de estados. \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v MaquinaDeEstados\:MaquinaDeEstados}
+{\xe \v MaquinaDeEstados\:MaquinaDeEstados}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b MaquinaDeEstados} (){\f2 [inline]}}}
+\par
+{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v getEntradaActual\:MaquinaDeEstados}
+{\xe \v MaquinaDeEstados\:getEntradaActual}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b Entrada} getEntradaActual (){\f2 [inline]}}}
+\par
+{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v setEntradaActual\:MaquinaDeEstados}
+{\xe \v MaquinaDeEstados\:setEntradaActual}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void setEntradaActual ({\b Entrada}  {\i entrada}){\f2 [inline]}}}
+\par
+{\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Proyecto Final.c}\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Umbrales Struct Reference\par \pard\plain 
+{\tc\tcl2 \v Umbrales}
+{\xe \v Umbrales}
+{\bkmkstart AAAAAAAAEP}
+{\bkmkend AAAAAAAAEP}
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Estructura que contiene los umbrales de control del sistema Esta estructura contiene los siguientes atributos: checkKey: representa una clave de verificaci\'F3n que se usa para evitar leer basura de la memoria EEPROM en el primer inicio del sistema umbrTempHigh: representa el umbral alto de temperatura umbrTempLow: representa el umbral bajo de temperatura umbrLuzHigh: representa el umbral alto de luz umbrLuzLow: representa el umbral bajo de luz. }}\par
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Data Fields\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b checkKey}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b umbrTempHigh}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b umbrTempLow}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b umbrLuzHigh}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b umbrLuzLow}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Estructura que contiene los umbrales de control del sistema Esta estructura contiene los siguientes atributos: checkKey: representa una clave de verificaci\'F3n que se usa para evitar leer basura de la memoria EEPROM en el primer inicio del sistema umbrTempHigh: representa el umbral alto de temperatura umbrTempLow: representa el umbral bajo de temperatura umbrLuzHigh: representa el umbral alto de luz umbrLuzLow: representa el umbral bajo de luz. \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Field Documentation\par
+\pard\plain 
+{\xe \v checkKey\:Umbrales}
+{\xe \v Umbrales\:checkKey}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int checkKey}}
+\par
+{\bkmkstart AAAAAAAAEQ}
+{\bkmkend AAAAAAAAEQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v umbrLuzHigh\:Umbrales}
+{\xe \v Umbrales\:umbrLuzHigh}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int umbrLuzHigh}}
+\par
+{\bkmkstart AAAAAAAAER}
+{\bkmkend AAAAAAAAER}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v umbrLuzLow\:Umbrales}
+{\xe \v Umbrales\:umbrLuzLow}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int umbrLuzLow}}
+\par
+{\bkmkstart AAAAAAAAES}
+{\bkmkend AAAAAAAAES}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v umbrTempHigh\:Umbrales}
+{\xe \v Umbrales\:umbrTempHigh}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int umbrTempHigh}}
+\par
+{\bkmkstart AAAAAAAAET}
+{\bkmkend AAAAAAAAET}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v umbrTempLow\:Umbrales}
+{\xe \v Umbrales\:umbrTempLow}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int umbrTempLow}}
+\par
+{\bkmkstart AAAAAAAAEU}
+{\bkmkend AAAAAAAAEU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this struct was generated from the following file:{\par
+\pard\plain \s121\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Proyecto Final.c}\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+File Documentation{\tc \v File Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Configuracion.c File Reference\par \pard\plain 
+{\tc\tcl2 \v Configuracion.c}
+{\xe \v Configuracion.c}
+{\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include "Configuracion.h"}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Configuracion.h File Reference\par \pard\plain 
+{\tc\tcl2 \v Configuracion.h}
+{\xe \v Configuracion.h}
+{\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Macros\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b DEFAULT_TEMPHIGH}\~ 29\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b DEFAULT_TEMPLOW}\~ 26\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b DEFAULT_LUZHIGH}\~ 800\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b DEFAULT_LUZLOW}\~ 300\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_BUZZER_PASIVO}\~ 12\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_LED_RED}\~ 4\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_LED_GREEN}\~ 5\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_LED_BLUE}\~ 6\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b TEST_TEMP}\~ 15\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b MAX_TEMP}\~ 125\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b MAX_LIGTH}\~ 1023\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_RS}\~ 52\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_EN}\~ 50\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_D4}\~ 48\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_D5}\~ 46\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_D6}\~ 44\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_D7}\~ 42\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_DHT}\~ 22\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_PHOTOCELL}\~ 11\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b PIN_BOTON}\~ 2\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Macro Definition Documentation\par
+\pard\plain 
+{\xe \v DEFAULT_LUZHIGH\:Configuracion.h}
+{\xe \v Configuracion.h\:DEFAULT_LUZHIGH}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define DEFAULT_LUZHIGH\~ 800}}
+\par
+{\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v DEFAULT_LUZLOW\:Configuracion.h}
+{\xe \v Configuracion.h\:DEFAULT_LUZLOW}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define DEFAULT_LUZLOW\~ 300}}
+\par
+{\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v DEFAULT_TEMPHIGH\:Configuracion.h}
+{\xe \v Configuracion.h\:DEFAULT_TEMPHIGH}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define DEFAULT_TEMPHIGH\~ 29}}
+\par
+{\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v DEFAULT_TEMPLOW\:Configuracion.h}
+{\xe \v Configuracion.h\:DEFAULT_TEMPLOW}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define DEFAULT_TEMPLOW\~ 26}}
+\par
+{\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v MAX_LIGTH\:Configuracion.h}
+{\xe \v Configuracion.h\:MAX_LIGTH}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define MAX_LIGTH\~ 1023}}
+\par
+{\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v MAX_TEMP\:Configuracion.h}
+{\xe \v Configuracion.h\:MAX_TEMP}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define MAX_TEMP\~ 125}}
+\par
+{\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_BOTON\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_BOTON}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_BOTON\~ 2}}
+\par
+{\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_BUZZER_PASIVO\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_BUZZER_PASIVO}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_BUZZER_PASIVO\~ 12}}
+\par
+{\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_D4\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_D4}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_D4\~ 48}}
+\par
+{\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_D5\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_D5}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_D5\~ 46}}
+\par
+{\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_D6\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_D6}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_D6\~ 44}}
+\par
+{\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_D7\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_D7}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_D7\~ 42}}
+\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_DHT\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_DHT}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_DHT\~ 22}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_EN\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_EN}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_EN\~ 50}}
+\par
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_LED_BLUE\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_LED_BLUE}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_LED_BLUE\~ 6}}
+\par
+{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_LED_GREEN\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_LED_GREEN}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_LED_GREEN\~ 5}}
+\par
+{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_LED_RED\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_LED_RED}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_LED_RED\~ 4}}
+\par
+{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_PHOTOCELL\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_PHOTOCELL}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_PHOTOCELL\~ 11}}
+\par
+{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v PIN_RS\:Configuracion.h}
+{\xe \v Configuracion.h\:PIN_RS}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define PIN_RS\~ 52}}
+\par
+{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v TEST_TEMP\:Configuracion.h}
+{\xe \v Configuracion.h\:TEST_TEMP}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define TEST_TEMP\~ 15}}
+\par
+{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Configuracion.h\par \pard\plain 
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+Go to the documentation of this file.{
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid 1 {\cf21 #ifndef CONFIGURACION_H}\par
+2 {\cf21 #define CONFIGURACION_H}\par
+3 {\cf21 #define DEFAULT_TEMPHIGH 29}\par
+4 {\cf21 #define DEFAULT_TEMPLOW 26}\par
+5 {\cf21 #define DEFAULT_LUZHIGH 800}\par
+6 {\cf21 #define DEFAULT_LUZLOW 300}\par
+7 \par
+8 {\cf21 #define PIN_BUZZER_PASIVO 12  }{\cf20 // buzzer pasivo en pin 12}\par
+9 \par
+10 {\cf21 #define PIN_LED_RED 4}\par
+11 {\cf21 #define PIN_LED_GREEN 5}\par
+12 {\cf21 #define PIN_LED_BLUE 6}\par
+13 \par
+14 {\cf21 #define TEST_TEMP 15}\par
+15 {\cf21 #define MAX_TEMP 125}\par
+16 {\cf21 #define MAX_LIGTH 1023}\par
+17 \par
+18 {\cf21 #define PIN_RS 52}\par
+19 {\cf21 #define PIN_EN 50}\par
+20 {\cf21 #define PIN_D4 48}\par
+21 {\cf21 #define PIN_D5 46}\par
+22 {\cf21 #define PIN_D6 44}\par
+23 {\cf21 #define PIN_D7 42}\par
+24 \par
+25 {\cf21 #define PIN_DHT 22}\par
+26 {\cf21 #define PIN_PHOTOCELL 11}\par
+27 {\cf21 #define PIN_BOTON 2}\par
+28 {\cf21 #endif}\par
+}
+\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Proyecto Final.c File Reference\par \pard\plain 
+{\tc\tcl2 \v Proyecto Final.c}
+{\xe \v Proyecto Final.c}
+{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+{
+\pard\plain \s18\widctlpar\fs22\cgrid {\f2 #include <LiquidCrystal.h>}\par
+{\f2 #include <LiquidMenu.h>}\par
+{\f2 #include <Keypad.h>}\par
+{\f2 #include <AsyncTaskLib.h>}\par
+{\f2 #include <DHTStable.h>}\par
+{\f2 #include <Config.h>}\par
+{\f2 #include <EasyBuzzer.h>}\par
+{\f2 #include <EEPROM.h>}\par
+{\f2 #include "Configuracion.h"}\par
+{\f2 #include <StateMachineLib.h>}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Data Structures\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+class {\b MaquinaDeEstados}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Clase que implementa una m\'E1quina de estados para controlar el funcionamiento del sistema. }}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+struct {\b Umbrales}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Estructura que contiene los umbrales de control del sistema Esta estructura contiene los siguientes atributos: checkKey: representa una clave de verificaci\'F3n que se usa para evitar leer basura de la memoria EEPROM en el primer inicio del sistema umbrTempHigh: representa el umbral alto de temperatura umbrTempLow: representa el umbral bajo de temperatura umbrLuzHigh: representa el umbral alto de luz umbrLuzLow: representa el umbral bajo de luz. }}\par}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Macros\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+#define {\b WOKWI}\~ false\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Typedefs\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+typedef struct {\b Umbrales} {\b Umbrales}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Enumerations\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+enum {\b Estado} \{ {\b Inicio}
+, {\b Configuracion}
+, {\b Monitoreo}
+, {\b Alarma}
+ \}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+enum {\b Entrada} \{ {\b Desconocida}
+, {\b Configurar}
+, {\b Monitorear}
+, {\b TemperaturaCaliente}
+ \}\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Functions\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b color} (unsigned char red, unsigned char green, unsigned char blue)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Genera un color a partir de los valores RGB dados. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskAwaitFiveSeconds} (300, true, []() \{ if({\b flgEsperar}) \{ for(int i=5;i > 0;i--) \{ lcd.clear();lcd.setCursor(0, 0);lcd.print("Espere ");lcd.print(i);lcd.println(" Secs");delay(1000);\} lcd.clear();lcd.setCursor(0, 0);lcd.print("Sigue intentando");EasyBuzzer.stopBeep();{\b flgEsperar}=false;{\b flgPuedeLeer}=true;{\b flgQuedanIntentos}=true;{\b flgPasswordcorrecto}=false;{\b flgPasswordIngresado}=false;{\b intentos}=0;\} \})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para esperar 5 segundos. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskAwaitTenSeconds} (10000, false, []() \{ {\b flgFirstCharacter}=true;{\b flgPasswordIngresado}=true;{\b flgPasswordcorrecto}=false;lcd.clear();lcd.setCursor(0, 0);lcd.print("time out: try again");\})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para esperar 10 segundos. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b verificarContrasenia} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funci\'F3n para verificar contrase\'F1a. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskLeerPassword} (100, true, []() \{ if({\b flgPuedeLeer} &&{\b flgQuedanIntentos}) \{ char key=keypad.getKey();if(key==' *'||{\b conteoCaracteres}==8) \{ {\b verificarContrasenia}();tskAwaitTenSeconds.Stop();{\b flgFirstCharacter}=true;{\b flgPasswordIngresado}=true;\} if(key !=' *' &&key !=NO_KEY) \{ if({\b flgFirstCharacter}) \{ tskAwaitTenSeconds.Start();{\b flgFirstCharacter}=false;\} tskAwaitTenSeconds.Reset();{\b contrasenia_leida}+=key;{\b conteoCaracteres}++;Serial.print("Contrase\'F1a leida: ");Serial.println({\b contrasenia_leida});char tempBuffer[9]="";memset(tempBuffer, ' *', {\b conteoCaracteres});lcd.clear();lcd.setCursor(0, 0);lcd.print(tempBuffer);\} \} \})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskDecisionPassword} (200, true, []() \{ if({\b flgPasswordIngresado} &&!{\b flgEsperar}) \{ {\b contrasenia_leida}="";{\b conteoCaracteres}=0;{\b flgPasswordIngresado}=false;if({\b flgPasswordcorrecto}) \{ {\b color}(0, 255, 0);Serial.println("LED VERDE");maquinaEstados.setEntradaActual({\b Entrada::Configurar});\} else \{ {\b color}(0, 0, 255);Serial.println("LED AZUL");{\b intentos}++;\} if({\b intentos} > 3) \{ {\b flgQuedanIntentos}=false;{\b flgPuedeLeer}=false;{\b flgEsperar}=true;{\b color}(255, 0, 0);Serial.println("LED ROJO");EasyBuzzer.singleBeep(300, 500);\} \} \})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para tomar decision de una contrase\'F1a. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskSeguridad} (100, []() \{ Serial.println("Entre hasta aqui");auto {\b setup}=[]() \{ pinMode({\b PIN_BUZZER_PASIVO}, OUTPUT);Serial.begin(9600);pinMode({\b PIN_LED_GREEN}, OUTPUT);pinMode({\b PIN_LED_BLUE}, OUTPUT);pinMode({\b PIN_LED_RED}, OUTPUT);EasyBuzzer.setPin({\b PIN_BUZZER_PASIVO});tskLeerPassword.Start();tskDecisionPassword.Start();tskAwaitFiveSeconds.Start();lcd.println("Ingrese Contra");\};auto {\b loop}=[]() \{ tskLeerPassword.Update();tskAwaitTenSeconds.Update();tskDecisionPassword.Update();tskAwaitFiveSeconds.Update();EasyBuzzer.update();\};{\b setup}();while(maquinaEstados.GetState()=={\b Estado::Inicio}) \{ Serial.println("Loop Seguridad");{\b loop}();\} \})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask que se encarga de manejar la seguridad del sistema. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b readNumber} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funcion lee un numero ingresado desde el teclado y lo devuelve como un entero. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b editar_valor} (String titulo, int *varimp, bool(*isInRangeFunction)(int, int *))\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Permite al usuario editar un valor espec\'EDfico en pantalla. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b isInTempRange} (int number, int *varimp)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Evalua si un numero se encuentra en el rango de temperatura especificado. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b isInLightRange} (int number, int *varimp)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Comprueba si un n\'FAmero est\'E1 dentro del rango especificado de un umbral de luz. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b umbTempHighFunc} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funci\'F3n para editar el valor de UmbTempHigh. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b umbTempLowFunc} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de editar el valor del umbral bajo de temperatura en la configuraci\'F3n de UmbTempLow. Utiliza la funci\'F3n "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la funci\'F3n "isInTempRange". }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b umbLuzHighFunc} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de editar el valor del umbral bajo de temperatura en la configuraci\'F3n de UmbTempLow. Utiliza la funci\'F3n "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la funci\'F3n "isInTempRange". }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b umbLuzLowFunc} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de editar el valor del umbral bajo de temperatura en la configuraci\'F3n de UmbTempLow. Utiliza la funci\'F3n "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la funci\'F3n "isInTempRange". }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_1_line_1} (0, 0, {\b messages}[0])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_1_line_2} (0, 1, {\b messages}[1])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidScreen {\b screen_1} ({\b screen_1_line_1}, {\b screen_1_line_2})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_2_line_1} (0, 0, {\b messages}[1])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_2_line_2} (0, 1, {\b messages}[2])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidScreen {\b screen_2} ({\b screen_2_line_1}, {\b screen_2_line_2})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_3_line_1} (0, 0, {\b messages}[2])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_3_line_2} (0, 1, {\b messages}[3])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidScreen {\b screen_3} ({\b screen_3_line_1}, {\b screen_3_line_2})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_4_line_1} (0, 0, {\b messages}[3])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_4_line_2} (0, 1, {\b messages}[4])\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidScreen {\b screen_4} ({\b screen_4_line_1}, {\b screen_4_line_2})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_5_line_1} (0, 0, "")\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidLine {\b screen_5_line_2} (0, 1, "")\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidScreen {\b screen_5} ({\b screen_5_line_1}, {\b screen_5_line_2})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidMenu {\b menu} (lcd, {\b screen_1}, {\b screen_2}, {\b screen_3}, {\b screen_4})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskConfiguracion} (100, []() \{ auto {\b setup}=[]() \{ EEPROM.get({\b eepromBaseAddres}, {\b umbralConfig});if(umbralConfig.checkKey !=umbralBaseConfig.checkKey) \{ {\b umbralConfig}={\b umbralBaseConfig};EEPROM.put({\b eepromBaseAddres}, {\b umbralConfig});\} menu.add_screen({\b screen_5});pinMode({\b PIN_LED_GREEN}, OUTPUT);pinMode({\b PIN_LED_BLUE}, OUTPUT);pinMode({\b PIN_LED_RED}, OUTPUT);screen_1_line_1.attach_function(1, {\b umbTempHighFunc});screen_1_line_2.attach_function(1, {\b umbTempLowFunc});screen_2_line_1.attach_function(1, {\b umbTempLowFunc});screen_2_line_2.attach_function(1, {\b umbLuzHighFunc});screen_3_line_1.attach_function(1, {\b umbLuzHighFunc});screen_3_line_2.attach_function(1, {\b umbLuzLowFunc});screen_4_line_1.attach_function(1, {\b umbLuzLowFunc});screen_4_line_2.attach_function(1, []() \{ menu.change_screen(&{\b screen_5});lcd.setCursor(0, 0);lcd.print("                ");lcd.setCursor(0, 0);lcd.print("\\"*\\" to confirm ");lcd.setCursor(0, 1);lcd.print("\\"#\\" to cancel  ");char pressedKey;int checkPointTime=millis();int elapsedTime=millis() - checkPointTime;while((pressedKey=keypad.getKey()) !=' *' &&pressedKey==NO_KEY &&pressedKey !='#' &&(elapsedTime=millis() - checkPointTime)<=5000||isAlphaNumeric(pressedKey)) \{ \} if(pressedKey=='#'||elapsedTime > 5000) \{ menu.change_screen({\b lastScreen});return;\} umbralConfig.umbrTempHigh={\b DEFAULT_TEMPHIGH};umbralConfig.umbrTempLow={\b DEFAULT_TEMPLOW};EEPROM.put({\b eepromBaseAddres}, {\b umbralConfig});menu.change_screen({\b lastScreen});\});menu.update();\};auto {\b loop}=[]() \{ char key=keypad.getKey();if(key=='A') \{ if(menu.get_currentScreen() !=&{\b screen_1}) \{ menu.previous_screen();\} \} else if(key=='D') \{ if(menu.get_currentScreen() !=&{\b screen_4}) \{ menu.next_screen();\} \} else if(key=='#') \{ menu.switch_focus();\} else if(key==' *') \{ {\b lastScreen}=menu.get_currentScreen();menu.call_function(1);\} \};{\b setup}();while(maquinaEstados.GetState()=={\b Estado::Configuracion}) \{ {\b loop}();\} \})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para configurar los umbrales de temperatura y luz. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b verificarErrores} (int chk)\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Verifica los errores devueltos por la librer\'EDa DHTStable. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskLeerTemperatura} (2000, true, []() \{ int chk=DHT.read11({\b PIN_DHT});{\b verificarErrores}(chk);{\b temperaturaLeida}=DHT.getTemperature();Serial.print("Temp: ");Serial.println({\b temperaturaLeida});\})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para leer la temperatura desde el sensor DHT. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskLeerHumedad} (1000, true, []() \{ int chk=DHT.read11({\b PIN_DHT});{\b verificarErrores}(chk);{\b humedadLeida}=DHT.getHumidity();Serial.print("Humd: ");Serial.println({\b humedadLeida});\})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para leer la humedad del sensor DHT. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskActualizarDisplay} (4000, true, []() \{ lcd.clear();lcd.setCursor(0, 0);lcd.print("Humedad: ");lcd.print({\b humedadLeida});lcd.setCursor(0, 1);lcd.print("Temp: ");lcd.print({\b temperaturaLeida});\})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+La tarea AsyncTask tskActualizarDisplay se encarga de actualizar los datos de humedad y temperatura en el display LCD cada 4 segundos. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskMonitoreo} (100, []() \{ auto {\b setup}=[]() \{ pinMode({\b PIN_BUZZER_PASIVO}, OUTPUT);pinMode({\b PIN_LED_GREEN}, OUTPUT);pinMode({\b PIN_LED_BLUE}, OUTPUT);pinMode({\b PIN_LED_RED}, OUTPUT);tskLeerTemperatura.Start();tskLeerHumedad.Start();tskActualizarDisplay.Start();\};auto {\b loop}=[]() \{ tskLeerTemperatura.Update();tskLeerHumedad.Update();tskActualizarDisplay.Update();if({\b temperaturaLeida} > umbralConfig.umbrTempHigh) \{ {\b color}(255, 0, 0);{\b temperaturaLeida}=0;maquinaEstados.setEntradaActual({\b Entrada::TemperaturaCaliente});\} else if({\b temperaturaLeida}< umbralConfig.umbrTempLow) \{ {\b color}(0, 0, 255);\} else if({\b temperaturaLeida} > umbralConfig.umbrTempLow &&{\b temperaturaLeida}< umbralConfig.umbrTempHigh) \{ {\b color}(0, 255, 0);\} \};{\b setup}();while(maquinaEstados.GetState()=={\b Entrada::Monitorear}) \{ {\b loop}();\} \})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para el monitoreo de alguna variable. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+AsyncTask {\b tskAlarma} (100, []() \{ auto {\b setup}=[]() \{ EasyBuzzer.setPin({\b PIN_BUZZER_PASIVO});EasyBuzzer.singleBeep(300, 2000);\};auto {\b loop}=[]() \{ EasyBuzzer.update();\};{\b setup}();while(maquinaEstados.GetState()=={\b Estado::Alarma}) \{ {\b loop}();lcd.clear();lcd.setCursor(0, 0);float checkpointTime=millis();float elapsedTime=millis() - checkpointTime;while(elapsedTime<=2000) \{ elapsedTime=millis() - checkpointTime;float reversedTime=(2000 - elapsedTime)/1000;lcd.clear();lcd.print("Espere ");lcd.print(reversedTime, 2);lcd.println(" Secs");\} EasyBuzzer.stopBeep();maquinaEstados.setEntradaActual({\b Entrada::Monitorear});\} \})\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para reproducir una alarma. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b configurarMaquinaEstado} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configuar la maquina de estados. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b botonPresionado} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funcion llamada cuando se presiona el boton. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b setup} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configuracion del sistema. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+void {\b loop} ()\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funci\'F3n principal de ejecuci\'F3n. }{
+}\par
+}\par}
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variables\par
+\pard\plain 
+
+{
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+DHTStable {\b DHT}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+const byte {\b ROWS} = 4\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+const byte {\b COLS} = 4\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+char {\b keys} [{\b ROWS}][{\b COLS}]\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+byte {\b rowPins} [{\b ROWS}] = \{ 39, 41, 43, 45 \}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+byte {\b colPins} [{\b COLS}] = \{ 47, 49, 51, 53 \}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+Keypad {\b keypad} = Keypad(makeKeymap({\b keys}), {\b rowPins}, {\b colPins}, {\b ROWS}, {\b COLS})\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b MaquinaDeEstados} {\b maquinaEstados}\par
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid {\i {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Objeto de la clase {\b MaquinaDeEstados}. }{
+}\par
+}\par}
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b flgEsperar} = false\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b flgQuedanIntentos} = true\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b flgPuedeLeer} = true\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b flgPasswordcorrecto} = false\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b flgPasswordIngresado} = false\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+bool {\b flgFirstCharacter} = true\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+String {\b contrasenia_leida} = ""\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+signed char {\b conteoCaracteres} = 0\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+String {\b contrasenia} = "12345"\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+signed char {\b intentos} = 0\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+long {\b elapsedtime} = 0\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Umbrales} {\b umbralConfig}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+{\b Umbrales} {\b umbralBaseConfig} = {\b Umbrales}\{ 192837465, {\b DEFAULT_TEMPHIGH}, {\b DEFAULT_TEMPLOW}, {\b DEFAULT_LUZHIGH}, {\b DEFAULT_LUZLOW} \}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+int {\b eepromBaseAddres} = 0\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+char * {\b messages} [5] = \{ "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" \}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+LiquidScreen * {\b lastScreen} = nullptr\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+float {\b humedadLeida}\par
+\pard\plain \s120\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+float {\b temperaturaLeida}\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Macro Definition Documentation\par
+\pard\plain 
+{\xe \v WOKWI\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:WOKWI}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+#define WOKWI\~ false}}
+\par
+{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Typedef Documentation\par
+\pard\plain 
+{\xe \v Umbrales\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Umbrales}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+typedef struct {\b Umbrales} {\b Umbrales}}}
+\par
+{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Enumeration Type Documentation\par
+\pard\plain 
+{\xe \v Entrada\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Entrada}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+enum {\b Entrada}}}
+\par
+{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Enumerator:\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{\xe \v Desconocida\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Desconocida}
+{\qr Desconocida{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+\cell }{\cell }{\row }
+{\xe \v Configurar\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Configurar}
+{\qr Configurar{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+\cell }{\cell }{\row }
+{\xe \v Monitorear\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Monitorear}
+{\qr Monitorear{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+\cell }{\cell }{\row }
+{\xe \v TemperaturaCaliente\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:TemperaturaCaliente}
+{\qr TemperaturaCaliente{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+\cell }{\cell }{\row }
+}
+}
+{\xe \v Estado\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Estado}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+enum {\b Estado}}}
+\par
+{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Enumerator:\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{\xe \v Inicio\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Inicio}
+{\qr Inicio{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+\cell }{\cell }{\row }
+{\xe \v Configuracion\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Configuracion}
+{\qr Configuracion{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+\cell }{\cell }{\row }
+{\xe \v Monitoreo\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Monitoreo}
+{\qr Monitoreo{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+\cell }{\cell }{\row }
+{\xe \v Alarma\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:Alarma}
+{\qr Alarma{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+\cell }{\cell }{\row }
+}
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Function Documentation\par
+\pard\plain 
+{\xe \v botonPresionado\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:botonPresionado}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void botonPresionado ()}}
+\par
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funcion llamada cuando se presiona el boton. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Cambia el estado de la maquina de estados segun el estado actual. \par
+}}
+{\xe \v color\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:color}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void color (unsigned char  {\i red}, unsigned char  {\i green}, unsigned char  {\i blue})}}
+\par
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Genera un color a partir de los valores RGB dados. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i red} \cell }{Valor para el color rojo (0-255) \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i green} \cell }{Valor para el color verde (0-255) \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i blue} \cell }{Valor para el color azul (0-255) \cell }
+{\row }
+}
+}}
+{\xe \v configurarMaquinaEstado\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:configurarMaquinaEstado}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void configurarMaquinaEstado ()}}
+\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configuar la maquina de estados. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configura las transiciones y las acciones al entrar y salir de cada estado de la m\'E1quina de estado \par
+}}
+{\xe \v editar_valor\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:editar_valor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void editar_valor (String  {\i titulo}, int *  {\i varimp}, bool(*)(int, int *)  {\i isInRangeFunction})}}
+\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Permite al usuario editar un valor espec\'EDfico en pantalla. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i titulo} \cell }{El t\'EDtulo a mostrar en la pantalla para indicar cual valor se est\'E1 editando \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i varimp} \cell }{Puntero al valor a editar \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i isInRangeFunction} \cell }{Puntero a funci\'F3n para verificar que el valor ingresado est\'E1 en el rango permitido \cell }
+{\row }
+}
+}}
+{\xe \v isInLightRange\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:isInLightRange}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool isInLightRange (int  {\i number}, int *  {\i varimp})}}
+\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Comprueba si un n\'FAmero est\'E1 dentro del rango especificado de un umbral de luz. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i number} \cell }{N\'FAmero a comprobar \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i varimp} \cell }{Puntero al umbral a comparar. Puede ser el umbral alto o bajo.\cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+true si el n\'FAmero est\'E1 dentro del rango especificado, false en caso contrario. \par
+}}}}
+{\xe \v isInTempRange\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:isInTempRange}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool isInTempRange (int  {\i number}, int *  {\i varimp})}}
+\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Evalua si un numero se encuentra en el rango de temperatura especificado. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i number} \cell }{numero a evaluar \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i varimp} \cell }{Puntero al limite inferior o superior del rango de temperatura \cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+true si el numero se encuentra en el rango, false en caso contrario \par
+}}}}
+{\xe \v loop\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:loop}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void loop ()}}
+\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funci\'F3n principal de ejecuci\'F3n. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n contiene el bucle principal del programa, en el cual se actualiza la m\'E1quina de estados y las tareas de seguridad, configuraci\'F3n, monitoreo y alarma. \par
+}}
+{\xe \v menu\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:menu}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidMenu menu (lcd , {\b screen_1} , {\b screen_2} , {\b screen_3} , {\b screen_4} )}}
+\par
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v readNumber\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:readNumber}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int readNumber ()}}
+\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funcion lee un numero ingresado desde el teclado y lo devuelve como un entero. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i None} \cell }{\cell }
+{\row }
+}
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Returns\par}\pard\plain \s82\li720\widctlpar\ql\adjustright \fs20\cgrid {\s17 \sa60 \sb30
+int numero ingresado desde el teclado, o un codigo que indica error \par
+}}}}
+{\xe \v screen_1\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidScreen screen_1 ({\b screen_1_line_1} , {\b screen_1_line_2} )}}
+\par
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_1_line_1\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_1_line_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_1_line_1 (0 , 0 , {\b messages} [0])}}
+\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_1_line_2\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_1_line_2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_1_line_2 (0 , 1 , {\b messages} [1])}}
+\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_2\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidScreen screen_2 ({\b screen_2_line_1} , {\b screen_2_line_2} )}}
+\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_2_line_1\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_2_line_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_2_line_1 (0 , 0 , {\b messages} [1])}}
+\par
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_2_line_2\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_2_line_2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_2_line_2 (0 , 1 , {\b messages} [2])}}
+\par
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_3\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_3}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidScreen screen_3 ({\b screen_3_line_1} , {\b screen_3_line_2} )}}
+\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_3_line_1\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_3_line_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_3_line_1 (0 , 0 , {\b messages} [2])}}
+\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_3_line_2\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_3_line_2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_3_line_2 (0 , 1 , {\b messages} [3])}}
+\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_4\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_4}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidScreen screen_4 ({\b screen_4_line_1} , {\b screen_4_line_2} )}}
+\par
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_4_line_1\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_4_line_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_4_line_1 (0 , 0 , {\b messages} [3])}}
+\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_4_line_2\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_4_line_2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_4_line_2 (0 , 1 , {\b messages} [4])}}
+\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_5\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_5}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidScreen screen_5 ({\b screen_5_line_1} , {\b screen_5_line_2} )}}
+\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_5_line_1\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_5_line_1}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_5_line_1 (0 , 0 , "" )}}
+\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v screen_5_line_2\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:screen_5_line_2}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidLine screen_5_line_2 (0 , 1 , "" )}}
+\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v setup\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:setup}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void setup ()}}
+\par
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Configuracion del sistema. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+se establecen los modos de algunos pines, se configura una interrupci\'F3n para cuando se presiona un bot\'F3n y se inicializa una pantalla LCD. Tambi\'E9n se inicializa una comunicaci\'F3n serie para poder ver mensajes en la consola y se llama a la funci\'F3n llamada "configurarMaquinaEstado" que configura la m\'E1quina de estados. Finalmente, se establece el estado inicial de la m\'E1quina de estados. \par
+}}
+{\xe \v tskActualizarDisplay\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskActualizarDisplay}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskActualizarDisplay (4000 , true , [] () \{ lcd.clear();lcd.setCursor(0, 0);lcd.print("Humedad: ");lcd.print({\b humedadLeida});lcd.setCursor(0, 1);lcd.print("Temp: ");lcd.print({\b temperaturaLeida});\} )}}
+\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+La tarea AsyncTask tskActualizarDisplay se encarga de actualizar los datos de humedad y temperatura en el display LCD cada 4 segundos. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+La tarea se ejecuta cada 4 segundos y actualiza los datos de humedad y temperatura en el display LCD. \par
+}}
+{\xe \v tskAlarma\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskAlarma}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskAlarma (100 , [] () \{ auto {\b setup}=[]() \{ EasyBuzzer.setPin({\b PIN_BUZZER_PASIVO});EasyBuzzer.singleBeep(300, 2000);\};auto {\b loop}=[]() \{ EasyBuzzer.update();\};{\b setup}();while(maquinaEstados.GetState()=={\b Estado::Alarma}) \{ {\b loop}();lcd.clear();lcd.setCursor(0, 0);float checkpointTime=millis();float elapsedTime=millis() - checkpointTime;while(elapsedTime<=2000) \{ elapsedTime=millis() - checkpointTime;float reversedTime=(2000 - elapsedTime)/1000;lcd.clear();lcd.print("Espere ");lcd.print(reversedTime, 2);lcd.println(" Secs");\} EasyBuzzer.stopBeep();maquinaEstados.setEntradaActual({\b Entrada::Monitorear});\} \} )}}
+\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para reproducir una alarma. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+tskAlarma es una tarea as\'EDncrona que se encarga de activar el buzzer y mostrar un mensaje en el LCD indicando la cantidad de segundos que quedan para desactivar la alarma. La alarma se activa mientras el estado de la m\'E1quina de estados sea Estado::Alarma. \par
+}}
+{\xe \v tskAwaitFiveSeconds\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskAwaitFiveSeconds}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskAwaitFiveSeconds (300 , true , [] () \{ if({\b flgEsperar}) \{ for(int i=5;i > 0;i--) \{ lcd.clear();lcd.setCursor(0, 0);lcd.print("Espere ");lcd.print(i);lcd.println(" Secs");delay(1000);\} lcd.clear();lcd.setCursor(0, 0);lcd.print("Sigue intentando");EasyBuzzer.stopBeep();{\b flgEsperar}=false;{\b flgPuedeLeer}=true;{\b flgQuedanIntentos}=true;{\b flgPasswordcorrecto}=false;{\b flgPasswordIngresado}=false;{\b intentos}=0;\} \} )}}
+\par
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para esperar 5 segundos. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta tarea se encarga de mostrar un mensaje en una pantalla LCD indicando al usuario que debe esperar 5 segundos antes de intentar nuevamente. Se utiliza un bucle for para contar los segundos y mostrarlos en la pantalla. Si la variable flgEsperar es verdadera, se muestra el mensaje en la pantalla y se espera 1 segundo antes de continuar con la siguiente iteraci\'F3n del bucle. Al finalizar la espera, se limpia la pantalla y se muestra el mensaje "Sigue intentando", se detiene la se\'F1al del buzzer, se reinician las banderas y se reinicia el contador de intentos. \par
+}}
+{\xe \v tskAwaitTenSeconds\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskAwaitTenSeconds}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskAwaitTenSeconds (10000 , false , [] () \{ {\b flgFirstCharacter}=true;{\b flgPasswordIngresado}=true;{\b flgPasswordcorrecto}=false;lcd.clear();lcd.setCursor(0, 0);lcd.print("time out: try again");\} )}}
+\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para esperar 10 segundos. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta tarea se encarga de esperar 10 segundos antes de mostrar un mensaje en una pantalla LCD indicando al usuario que debe intentar nuevamente. Se utiliza un delay de 10 segundos(El delay de la tarea) para detener la ejecuci\'F3n del c\'F3digo durante ese tiempo. Al finalizar la espera, se limpia la pantalla, se coloca el cursor en la posici\'F3n 0,0, se muestra el mensaje "time out: try again", se reinician las banderas "flgFirstCharacter" y "flgPasswordIngresado" y se establece flgPasswordcorrecto = false. \par
+}}
+{\xe \v tskConfiguracion\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskConfiguracion}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskConfiguracion (100 , [] () \{ auto {\b setup}=[]() \{ EEPROM.get({\b eepromBaseAddres}, {\b umbralConfig});if(umbralConfig.checkKey !=umbralBaseConfig.checkKey) \{ {\b umbralConfig}={\b umbralBaseConfig};EEPROM.put({\b eepromBaseAddres}, {\b umbralConfig});\} menu.add_screen({\b screen_5});pinMode({\b PIN_LED_GREEN}, OUTPUT);pinMode({\b PIN_LED_BLUE}, OUTPUT);pinMode({\b PIN_LED_RED}, OUTPUT);screen_1_line_1.attach_function(1, {\b umbTempHighFunc});screen_1_line_2.attach_function(1, {\b umbTempLowFunc});screen_2_line_1.attach_function(1, {\b umbTempLowFunc});screen_2_line_2.attach_function(1, {\b umbLuzHighFunc});screen_3_line_1.attach_function(1, {\b umbLuzHighFunc});screen_3_line_2.attach_function(1, {\b umbLuzLowFunc});screen_4_line_1.attach_function(1, {\b umbLuzLowFunc});screen_4_line_2.attach_function(1, []() \{ menu.change_screen(&{\b screen_5});lcd.setCursor(0, 0);lcd.print("                ");lcd.setCursor(0, 0);lcd.print("\\"*\\" to confirm ");lcd.setCursor(0, 1);lcd.print("\\"#\\" to cancel  ");char pressedKey;int checkPointTime=millis();int elapsedTime=millis() - checkPointTime;while((pressedKey=keypad.getKey()) !=' *' &&pressedKey==NO_KEY &&pressedKey !='#' &&(elapsedTime=millis() - checkPointTime)<=5000||isAlphaNumeric(pressedKey)) \{ \} if(pressedKey=='#'||elapsedTime > 5000) \{ menu.change_screen({\b lastScreen});return;\} umbralConfig.umbrTempHigh={\b DEFAULT_TEMPHIGH};umbralConfig.umbrTempLow={\b DEFAULT_TEMPLOW};EEPROM.put({\b eepromBaseAddres}, {\b umbralConfig});menu.change_screen({\b lastScreen});\});menu.update();\};auto {\b loop}=[]() \{ char key=keypad.getKey();if(key=='A') \{ if(menu.get_currentScreen() !=&{\b screen_1}) \{ menu.previous_screen();\} \} else if(key=='D') \{ if(menu.get_currentScreen() !=&{\b screen_4}) \{ menu.next_screen();\} \} else if(key=='#') \{ menu.switch_focus();\} else if(key==' *') \{ {\b lastScreen}=menu.get_currentScreen();menu.call_function(1);\} \};{\b setup}();while(maquinaEstados.GetState()=={\b Estado::Configuracion}) \{ {\b loop}();\} \} )}}
+\par
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para configurar los umbrales de temperatura y luz. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+El objeto AsyncTask "tskConfiguracion" se encarga de la configuraci\'F3n de los umbrales de temperatura y luz. Al iniciar, se le proporciona un tiempo de ejecuci\'F3n de 100ms y una funci\'F3n lambda que contiene el c\'F3digo de configuraci\'F3n. En la funci\'F3n de configuraci\'F3n, se carga la configuraci\'F3n actual desde la memoria EEPROM y se verifica si es v\'E1lida. Si no es v\'E1lida, se establece la configuraci\'F3n predeterminada. Luego se configura el modo de los pines correspondientes a los LEDs, se asignan funciones a los elementos de pantalla y se actualiza el men\'FA. En la funci\'F3n de bucle, se verifica si se ha presionado alguna tecla en el teclado y se realizan acciones correspondientes como cambiar de pantalla, activar o desactivar el enfoque en el men\'FA (la flecha), y llamar a funciones asociadas a cada elemento de pantalla. El bucle se ejecutar\'E1 mientras el estado de la m\'E1quina de estados sea configuraci\'F3n. \par
+}}
+{\xe \v tskDecisionPassword\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskDecisionPassword}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskDecisionPassword (200 , true , [] () \{ if({\b flgPasswordIngresado} &&!{\b flgEsperar}) \{ {\b contrasenia_leida}="";{\b conteoCaracteres}=0;{\b flgPasswordIngresado}=false;if({\b flgPasswordcorrecto}) \{ {\b color}(0, 255, 0);Serial.println("LED VERDE");maquinaEstados.setEntradaActual({\b Entrada::Configurar});\} else \{ {\b color}(0, 0, 255);Serial.println("LED AZUL");{\b intentos}++;\} if({\b intentos} > 3) \{ {\b flgQuedanIntentos}=false;{\b flgPuedeLeer}=false;{\b flgEsperar}=true;{\b color}(255, 0, 0);Serial.println("LED ROJO");EasyBuzzer.singleBeep(300, 500);\} \} \} )}}
+\par
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para tomar decision de una contrase\'F1a. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+tskDecisionPassword es una tarea as\'EDncrona que se encarga de tomar una decisi\'F3n basada en el resultado de la contrase\'F1a ingresada previamente. \par
+}}
+{\xe \v tskLeerHumedad\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskLeerHumedad}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskLeerHumedad (1000 , true , [] () \{ int chk=DHT.read11({\b PIN_DHT});{\b verificarErrores}(chk);{\b humedadLeida}=DHT.getHumidity();Serial.print("Humd: ");Serial.println({\b humedadLeida});\} )}}
+\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para leer la humedad del sensor DHT. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Este AsyncTask se encarga de leer la humedad del sensor DHT con una frecuencia especificada en el primer argumento (1000ms en este caso). Si el segundo argumento es true, el AsyncTask se repetir\'E1 constantemente. La funci\'F3n leer\'E1 la humedad del sensor DHT utilizando la librer\'EDa DHTStable y almacenar\'E1 el valor en la variable humedadLeida. Tambi\'E9n imprimir\'E1 el valor de humedad en el puerto serie. \par
+}}
+{\xe \v tskLeerPassword\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskLeerPassword}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskLeerPassword (100 , true , [] () \{ if({\b flgPuedeLeer} &&{\b flgQuedanIntentos}) \{ char key=keypad.getKey();if(key==' *'||{\b conteoCaracteres}==8) \{ {\b verificarContrasenia}();tskAwaitTenSeconds.Stop();{\b flgFirstCharacter}=true;{\b flgPasswordIngresado}=true;\} if(key !=' *' &&key !=NO_KEY) \{ if({\b flgFirstCharacter}) \{ tskAwaitTenSeconds.Start();{\b flgFirstCharacter}=false;\} tskAwaitTenSeconds.Reset();{\b contrasenia_leida}+=key;{\b conteoCaracteres}++;Serial.print("Contrase\'F1a leida: ");Serial.println({\b contrasenia_leida});char tempBuffer[9]="";memset(tempBuffer, ' *', {\b conteoCaracteres});lcd.clear();lcd.setCursor(0, 0);lcd.print(tempBuffer);\} \} \} )}}
+\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v tskLeerTemperatura\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskLeerTemperatura}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskLeerTemperatura (2000 , true , [] () \{ int chk=DHT.read11({\b PIN_DHT});{\b verificarErrores}(chk);{\b temperaturaLeida}=DHT.getTemperature();Serial.print("Temp: ");Serial.println({\b temperaturaLeida});\} )}}
+\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask para leer la temperatura desde el sensor DHT. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+El objeto AsyncTask "tskLeerTemperatura" se encarga de la lectura de la temperatura desde el sensor DHT. Al iniciar, se le proporciona un tiempo de ejecuci\'F3n de 2000ms y la opci\'F3n de ejecutar en modo c\'EDclico. En su funci\'F3n lambda se realiza la lectura del sensor utilizando la librer\'EDa DHTSatble, se verifica si existe alg\'FAn error en la lectura y se almacena el valor le\'EDdo en la variable "temperaturaLeida". Adem\'E1s, se imprime el valor le\'EDdo por el puerto serie. Esta tarea es utilizada para actualizar peri\'F3dicamente la lectura de la temperatura en la aplicaci\'F3n. \par
+}}
+{\xe \v tskMonitoreo\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskMonitoreo}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskMonitoreo (100 , [] () \{ auto {\b setup}=[]() \{ pinMode({\b PIN_BUZZER_PASIVO}, OUTPUT);pinMode({\b PIN_LED_GREEN}, OUTPUT);pinMode({\b PIN_LED_BLUE}, OUTPUT);pinMode({\b PIN_LED_RED}, OUTPUT);tskLeerTemperatura.Start();tskLeerHumedad.Start();tskActualizarDisplay.Start();\};auto {\b loop}=[]() \{ tskLeerTemperatura.Update();tskLeerHumedad.Update();tskActualizarDisplay.Update();if({\b temperaturaLeida} > umbralConfig.umbrTempHigh) \{ {\b color}(255, 0, 0);{\b temperaturaLeida}=0;maquinaEstados.setEntradaActual({\b Entrada::TemperaturaCaliente});\} else if({\b temperaturaLeida}< umbralConfig.umbrTempLow) \{ {\b color}(0, 0, 255);\} else if({\b temperaturaLeida} > umbralConfig.umbrTempLow &&{\b temperaturaLeida}< umbralConfig.umbrTempHigh) \{ {\b color}(0, 255, 0);\} \};{\b setup}();while(maquinaEstados.GetState()=={\b Entrada::Monitorear}) \{ {\b loop}();\} \} )}}
+\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Tarea as\'EDncrona para el monitoreo de alguna variable. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+La tarea as\'EDncrona se encarga de monitorear alguna variable utilizando varios subprocesos. Se inicializa con un intervalo de tiempo de 100ms y tiene dos funciones anidadas, 'setup' y 'loop'. La funci\'F3n 'setup' configura los pines para el uso del buzzer, los leds y arranca las tareas de lectura de temperatura, humedad y actualizaci\'F3n del display. La funci\'F3n 'loop' se encarga de actualizar las tareas mencionadas anteriormente y de cambiar el color de los leds dependiendo del valor de la temperatura le\'EDda. Si la temperatura es mayor al umbral de temperatura alta, el led rojo se encender\'E1 y se cambiara el estado de la maquina. Si es menor al umbral de temperatura baja, el led azul se encender\'E1. Si se encuentra entre ambos umbrales, el led verde se encender\'E1. El bucle principal de esta tarea se ejecuta mientras el estado de la m\'E1quina de estados sea "Monitorear". \par
+}}
+{\xe \v tskSeguridad\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:tskSeguridad}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+AsyncTask tskSeguridad (100 , [] () \{ Serial.println("Entre hasta aqui");auto {\b setup}=[]() \{ pinMode({\b PIN_BUZZER_PASIVO}, OUTPUT);Serial.begin(9600);pinMode({\b PIN_LED_GREEN}, OUTPUT);pinMode({\b PIN_LED_BLUE}, OUTPUT);pinMode({\b PIN_LED_RED}, OUTPUT);EasyBuzzer.setPin({\b PIN_BUZZER_PASIVO});tskLeerPassword.Start();tskDecisionPassword.Start();tskAwaitFiveSeconds.Start();lcd.println("Ingrese Contra");\};auto {\b loop}=[]() \{ tskLeerPassword.Update();tskAwaitTenSeconds.Update();tskDecisionPassword.Update();tskAwaitFiveSeconds.Update();EasyBuzzer.update();\};{\b setup}();while(maquinaEstados.GetState()=={\b Estado::Inicio}) \{ Serial.println("Loop Seguridad");{\b loop}();\} \} )}}
+\par
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+AsyncTask que se encarga de manejar la seguridad del sistema. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+En este AsyncTask se encuentra el loop principal de la seguridad del sistema. En el se inicializan los pines necesarios para el funcionamiento del sistema, se inician las tareas necesarias para el funcionamiento del sistema y se actualizan los estados de las tareas y componentes del sistema. Dentro del loop se encuentra la llamada a las funciones de actualizacion de las tareas de lectura de contrase\'F1a, espera de 10 segundos, toma de decisiones y espera de 5 segundos. Tambi\'E9n se encuentra la llamada a la funci\'F3n de actualizaci\'F3n del buzzer pasivo. El loop se encuentra dentro de un while que se mantiene activo mientras el estado de la m\'E1quina de estados sea el de Inicio. \par
+}}
+{\xe \v umbLuzHighFunc\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:umbLuzHighFunc}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void umbLuzHighFunc ()}}
+\par
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de editar el valor del umbral bajo de temperatura en la configuraci\'F3n de UmbTempLow. Utiliza la funci\'F3n "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la funci\'F3n "isInTempRange". }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i umbralConfig} \cell }{Estructura que contiene la configuraci\'F3n de los umbrales. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i UmbLuzHigh} \cell }{Puntero al valor del umbral alto de luz en la configuraci\'F3n. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i isInTempRange} \cell }{Puntero a la funci\'F3n utilizada para verificar si el valor ingresado se encuentra en el rango permitido. \cell }
+{\row }
+}
+}}
+{\xe \v umbLuzLowFunc\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:umbLuzLowFunc}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void umbLuzLowFunc ()}}
+\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de editar el valor del umbral bajo de temperatura en la configuraci\'F3n de UmbTempLow. Utiliza la funci\'F3n "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la funci\'F3n "isInTempRange". }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i umbralConfig} \cell }{Estructura que contiene la configuraci\'F3n de los umbrales. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i UmbLuzLow} \cell }{Puntero al valor del umbral bajo de luz en la configuraci\'F3n. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i isInTempRange} \cell }{Puntero a la funci\'F3n utilizada para verificar si el valor ingresado se encuentra en el rango permitido. \cell }
+{\row }
+}
+}}
+{\xe \v umbTempHighFunc\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:umbTempHighFunc}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void umbTempHighFunc ()}}
+\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funci\'F3n para editar el valor de UmbTempHigh. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i umbralConfig} \cell }{Estructura que contiene la configuraci\'F3n de los umbrales. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i umbrTempHigh} \cell }{Puntero al valor del umbral alto de temperatura en la configuraci\'F3n. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i isInTempRange} \cell }{Puntero a la funci\'F3n utilizada para verificar si el valor ingresado se encuentra en el rango permitido. \cell }
+{\row }
+}
+}}
+{\xe \v umbTempLowFunc\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:umbTempLowFunc}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void umbTempLowFunc ()}}
+\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de editar el valor del umbral bajo de temperatura en la configuraci\'F3n de UmbTempLow. Utiliza la funci\'F3n "editar_valor" para realizar esta tarea y verifica si el valor ingresado se encuentra en el rango de temperatura permitido mediante la funci\'F3n "isInTempRange". }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{\par
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i umbralConfig} \cell }{Estructura que contiene la configuraci\'F3n de los umbrales. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i umbrTempLow} \cell }{Puntero al valor del umbral bajo de temperatura en la configuraci\'F3n. \cell }
+{\row }
+\trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx1224
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx3061
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{in\cell }{{\i isInTempRange} \cell }{Puntero a la funci\'F3n utilizada para verificar si el valor ingresado se encuentra en el rango permitido. \cell }
+{\row }
+}
+}}
+{\xe \v verificarContrasenia\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:verificarContrasenia}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void verificarContrasenia ()}}
+\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Funci\'F3n para verificar contrase\'F1a. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Esta funci\'F3n se encarga de comparar una contrase\'F1a almacenada previamente con una contrase\'F1a leida. Si las contrase\'F1as coinciden se muestra un mensaje "Contrase\'F1a correcta" en la consola serial y en una pantalla LCD y se establece la bandera flgPasswordcorrecto = true Si las contrase\'F1as no coinciden se muestra un mensaje "Contrase\'F1a incorrecta" en la consola serial y en una pantalla LCD y se establece la bandera flgPasswordcorrecto = false \par
+}}
+{\xe \v verificarErrores\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:verificarErrores}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+void verificarErrores (int  {\i chk})}}
+\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Verifica los errores devueltos por la librer\'EDa DHTStable. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+La funci\'F3n {\b verificarErrores()} recibe como par\'E1metro un entero "chk" que representa el c\'F3digo de error devuelto por la librer\'EDa DHTStable. Se utiliza un switch-case para analizar el c\'F3digo de error y imprimir en el monitor serie un mensaje descriptivo del error. Si el c\'F3digo de error es igual a DHTLIB_OK, se imprime "OK". Si el c\'F3digo de error es igual a DHTLIB_ERROR_CHECKSUM, se imprime "Checksum error". Si el c\'F3digo de error es igual a DHTLIB_ERROR_TIMEOUT, se imprime "Time out error". Si el c\'F3digo de error es desconocido, se imprime "Unknown error".\par
+{{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid 
+Parameters\par}
+\pard\plain \s81\li360\widctlpar\ql\adjustright \fs20\cgrid \trowd \trgaph108\trleft426\tblind426\trbrdrt\brdrs\brdrw10\brdrcf15 \trbrdrl\brdrs\brdrw10\brdrcf15 \trbrdrb\brdrs\brdrw10\brdrcf15 \trbrdrr\brdrs\brdrw10\brdrcf15 \trbrdrh\brdrs\brdrw10\brdrcf15 \trbrdrv\brdrs\brdrw10\brdrcf15 
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx2187
+\clvertalt\clbrdrt\brdrs\brdrw10\brdrcf15 \clbrdrl\brdrs\brdrw10\brdrcf15 \clbrdrb\brdrs\brdrw10\brdrcf15 \clbrdrr \brdrs\brdrw10\brdrcf15 \cltxlrtb \cellx8748
+\pard \widctlpar\intbl\adjustright
+{{\i chk} \cell }{C\'F3digo de error devuelto por la librer\'EDa DHTStable. \cell }
+{\row }
+}
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Variable Documentation\par
+\pard\plain 
+{\xe \v colPins\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:colPins}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+byte colPins[{\b COLS}] = \{ 47, 49, 51, 53 \}}}
+\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v COLS\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:COLS}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+const byte COLS = 4}}
+\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v conteoCaracteres\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:conteoCaracteres}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+signed char conteoCaracteres = 0}}
+\par
+{\bkmkstart AAAAAAAADC}
+{\bkmkend AAAAAAAADC}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v contrasenia\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:contrasenia}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+String contrasenia = "12345"}}
+\par
+{\bkmkstart AAAAAAAADD}
+{\bkmkend AAAAAAAADD}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v contrasenia_leida\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:contrasenia_leida}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+String contrasenia_leida = ""}}
+\par
+{\bkmkstart AAAAAAAADE}
+{\bkmkend AAAAAAAADE}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v DHT\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:DHT}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+DHTStable DHT}}
+\par
+{\bkmkstart AAAAAAAADF}
+{\bkmkend AAAAAAAADF}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v eepromBaseAddres\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:eepromBaseAddres}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+int eepromBaseAddres = 0}}
+\par
+{\bkmkstart AAAAAAAADG}
+{\bkmkend AAAAAAAADG}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v elapsedtime\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:elapsedtime}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+long elapsedtime = 0}}
+\par
+{\bkmkstart AAAAAAAADH}
+{\bkmkend AAAAAAAADH}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v flgEsperar\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:flgEsperar}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool flgEsperar = false}}
+\par
+{\bkmkstart AAAAAAAADI}
+{\bkmkend AAAAAAAADI}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v flgFirstCharacter\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:flgFirstCharacter}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool flgFirstCharacter = true}}
+\par
+{\bkmkstart AAAAAAAADJ}
+{\bkmkend AAAAAAAADJ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v flgPasswordcorrecto\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:flgPasswordcorrecto}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool flgPasswordcorrecto = false}}
+\par
+{\bkmkstart AAAAAAAADK}
+{\bkmkend AAAAAAAADK}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v flgPasswordIngresado\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:flgPasswordIngresado}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool flgPasswordIngresado = false}}
+\par
+{\bkmkstart AAAAAAAADL}
+{\bkmkend AAAAAAAADL}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v flgPuedeLeer\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:flgPuedeLeer}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool flgPuedeLeer = true}}
+\par
+{\bkmkstart AAAAAAAADM}
+{\bkmkend AAAAAAAADM}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v flgQuedanIntentos\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:flgQuedanIntentos}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+bool flgQuedanIntentos = true}}
+\par
+{\bkmkstart AAAAAAAADN}
+{\bkmkend AAAAAAAADN}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v humedadLeida\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:humedadLeida}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+float humedadLeida}}
+\par
+{\bkmkstart AAAAAAAADO}
+{\bkmkend AAAAAAAADO}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v intentos\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:intentos}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+signed char intentos = 0}}
+\par
+{\bkmkstart AAAAAAAADP}
+{\bkmkend AAAAAAAADP}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v keypad\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:keypad}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+Keypad keypad = Keypad(makeKeymap({\b keys}), {\b rowPins}, {\b colPins}, {\b ROWS}, {\b COLS})}}
+\par
+{\bkmkstart AAAAAAAADQ}
+{\bkmkend AAAAAAAADQ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v keys\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:keys}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+char keys[{\b ROWS}][{\b COLS}]}}
+\par
+{\bkmkstart AAAAAAAADR}
+{\bkmkend AAAAAAAADR}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\b Initial value:}{
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid = \{\par
+  \{ {\cf23 '1'}, {\cf23 '2'}, {\cf23 '3'}, {\cf23 'A'} \},\par
+  \{ {\cf23 '4'}, {\cf23 '5'}, {\cf23 '6'}, {\cf23 'B'} \},\par
+  \{ {\cf23 '7'}, {\cf23 '8'}, {\cf23 '9'}, {\cf23 'C'} \},\par
+  \{ {\cf23 '*'}, {\cf23 '0'}, {\cf23 '#'}, {\cf23 'D'} \}\par
+\}\par
+}
+}
+{\xe \v lastScreen\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:lastScreen}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+LiquidScreen* lastScreen = nullptr}}
+\par
+{\bkmkstart AAAAAAAADS}
+{\bkmkend AAAAAAAADS}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v maquinaEstados\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:maquinaEstados}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+maquinaEstados}}
+\par
+{\bkmkstart AAAAAAAADT}
+{\bkmkend AAAAAAAADT}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+\par
+{
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Objeto de la clase {\b MaquinaDeEstados}. }}\par
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+Este objeto se utiliza para controlar el funcionamiento del sistema a trav\'E9s de la m\'E1quina de estados. \par
+}}
+{\xe \v messages\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:messages}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+char* messages[5] = \{ "1.UmbTempHigh", "2.UmbTempLow", "3.UmbLuzHigh", "4.UmbLuzLow", "5.Reset" \}}}
+\par
+{\bkmkstart AAAAAAAADU}
+{\bkmkend AAAAAAAADU}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v rowPins\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:rowPins}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+byte rowPins[{\b ROWS}] = \{ 39, 41, 43, 45 \}}}
+\par
+{\bkmkstart AAAAAAAADV}
+{\bkmkend AAAAAAAADV}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v ROWS\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:ROWS}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+const byte ROWS = 4}}
+\par
+{\bkmkstart AAAAAAAADW}
+{\bkmkend AAAAAAAADW}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v temperaturaLeida\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:temperaturaLeida}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+float temperaturaLeida}}
+\par
+{\bkmkstart AAAAAAAADX}
+{\bkmkend AAAAAAAADX}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v umbralBaseConfig\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:umbralBaseConfig}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b Umbrales} umbralBaseConfig = {\b Umbrales}\{ 192837465, {\b DEFAULT_TEMPHIGH}, {\b DEFAULT_TEMPLOW}, {\b DEFAULT_LUZHIGH}, {\b DEFAULT_LUZLOW} \}}}
+\par
+{\bkmkstart AAAAAAAADY}
+{\bkmkend AAAAAAAADY}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+{\xe \v umbralConfig\:Proyecto Final.c}
+{\xe \v Proyecto Final.c\:umbralConfig}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+{\b Umbrales} umbralConfig}}
+\par
+{\bkmkstart AAAAAAAADZ}
+{\bkmkend AAAAAAAADZ}
+{
+\pard\plain \s61\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}
