@@ -774,9 +774,12 @@ AsyncTask tskActualizarDisplay(4000, true, []() {
   lcd.setCursor(0, 0);
   lcd.print("Humedad: ");
   lcd.print(humedadLeida);
+  lcd.print(" %");
   lcd.setCursor(0, 1);
   lcd.print("Temp: ");
   lcd.print(temperaturaLeida);
+  lcd.print(" °C");
+
 });
 /**
 * @brief Tarea asíncrona para el monitoreo de alguna variable
